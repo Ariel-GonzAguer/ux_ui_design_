@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Thinking - Proceso de Ideación</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid #667eea;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            margin-top: 0;
+            font-size: 1.8em;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        
+        .section h3 {
+            color: #764ba2;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .key-points {
+            background-color: #e8f4fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .key-points h4 {
+            color: #0056b3;
+            margin-top: 0;
+        }
+        
+        .techniques-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .technique-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .technique-card h5 {
+            color: #495057;
+            margin-top: 0;
+            font-size: 1.1em;
+        }
+        
+        .process-flow {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: linear-gradient(90deg, #e3f2fd, #f3e5f5);
+            border-radius: 10px;
+        }
+        
+        .process-step {
+            text-align: center;
+            flex: 1;
+            padding: 10px;
+        }
+        
+        .process-step h4 {
+            color: #1565c0;
+            margin: 0;
+        }
+        
+        .arrow {
+            font-size: 1.5em;
+            color: #667eea;
+        }
+        
+        .additional-info {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .additional-info h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-style: italic;
+            border-top: 1px solid #eee;
+            margin-top: 30px;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+                color: black;
+            }
+            
+            .header {
+                background: #667eea !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+        
+        .example-card {
+            background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #28a745;
+        }
+        
+        .example-card h4 {
+            color: #155724;
+            margin-top: 0;
+            font-size: 1.2em;
+        }
+        
+        .exercise-container {
+            background: linear-gradient(135deg, #fff3e0 0%, #fff8f0 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #ff9800;
+        }
+        
+        .error-card {
+            background: linear-gradient(135deg, #ffebee 0%, #fef5f5 100%);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #f44336;
+            margin: 10px 0;
+        }
+        
+        .template-box {
+            background: linear-gradient(135deg, #f3e5f5 0%, #faf0fb 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #9c27b0;
+        }
+        
+        .methodology-steps {
+            counter-reset: step-counter;
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .methodology-steps li {
+            counter-increment: step-counter;
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #6c757d;
+            position: relative;
+        }
+        
+        .methodology-steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: -15px;
+            top: 15px;
+            background: #6c757d;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .success-metric {
+            display: inline-block;
+            background: #d4edda;
+            color: #155724;
+            padding: 5px 10px;
+            border-radius: 15px;
+            margin: 3px;
+            font-size: 0.9em;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .warning-box h4 {
+            color: #856404;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Design Thinking</h1>
+        <p>Proceso de Ideación y Definición de Problemas</p>
+    </div>
+
+    <div class="section">
+        <h2>🎯 Resumen Ejecutivo</h2>
+        <p>El Design Thinking es un proceso <strong>no lineal</strong> centrado en el usuario que utiliza insights de investigación para definir problemas y desarrollar soluciones innovadoras. Las etapas de "Definir" e "Idear" son fundamentales para crear soluciones que realmente resuelvan necesidades reales de los usuarios.</p>
+        
+        <div class="highlight">
+            <strong>Principio Clave:</strong> Mantener al usuario en el centro del proceso de diseño durante todas las etapas, especialmente en la definición del problema y la generación de ideas.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📋 Etapa de Definición del Problema</h2>
+        
+        <div class="key-points">
+            <h4>Objetivo Principal</h4>
+            <p>Determinar qué problema intentará resolver nuestro diseño, basándose en datos recopilados durante la investigación de usuarios.</p>
+        </div>
+
+        <h3>🎯 Declaración del Problema (Problem Statement)</h3>
+        <p>Una descripción breve del problema que el diseño pretende resolver. Debe:</p>
+        <ul>
+            <li>Enfocarse en <strong>un solo problema</strong></li>
+            <li>No incluir soluciones o características del producto</li>
+            <li>Ser revisada después de la investigación de usuarios</li>
+            <li>Guiar directa e indirectamente las decisiones del proyecto</li>
+        </ul>
+
+        <h3>📝 Metodología de las 5 W's (Nielsen Norman Group)</h3>
+        <div class="techniques-grid">
+            <div class="technique-card">
+                <h5>WHO (Quién)</h5>
+                <p>¿Quién se ve afectado por el problema?</p>
+            </div>
+            <div class="technique-card">
+                <h5>WHAT (Qué)</h5>
+                <p>¿Cuál es el problema?</p>
+            </div>
+            <div class="technique-card">
+                <h5>WHERE (Dónde)</h5>
+                <p>¿Dónde ocurre este problema?</p>
+            </div>
+            <div class="technique-card">
+                <h5>WHEN (Cuándo)</h5>
+                <p>¿Cuándo ocurre el problema?</p>
+            </div>
+            <div class="technique-card">
+                <h5>WHY (Por qué)</h5>
+                <p>¿Por qué ocurre? ¿Por qué es importante?</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>💡 Etapa de Ideación</h2>
+        
+        <div class="key-points">
+            <h4>Propósito</h4>
+            <p>Explorar soluciones al problema definido, generando una gran cantidad de ideas sin preocuparse inicialmente por la calidad. El objetivo es <strong>cantidad sobre calidad</strong> en la fase inicial.</p>
+        </div>
+
+        <h3>🛠️ Técnicas de Ideación</h3>
+        <div class="techniques-grid">
+            <div class="technique-card">
+                <h5>Brainwriting</h5>
+                <p>Escritura silenciosa de ideas para evitar influencias grupales</p>
+            </div>
+            <div class="technique-card">
+                <h5>Crazy 8's</h5>
+                <p>8 ideas en 8 minutos para forzar la creatividad</p>
+            </div>
+            <div class="technique-card">
+                <h5>Mind Mapping</h5>
+                <p>Transformar conceptos generales en ideas específicas y accionables</p>
+            </div>
+            <div class="technique-card">
+                <h5>S.C.A.M.P.E.R.</h5>
+                <p>Sustituir, Combinar, Adaptar, Modificar, Proponer, Eliminar, Revertir</p>
+            </div>
+            <div class="technique-card">
+                <h5>Worst Possible Idea</h5>
+                <p>Generar ideas terribles para liberar la creatividad</p>
+            </div>
+        </div>
+
+        <h3>🎯 Selección de Ideas</h3>
+        <p>Métodos para elegir las mejores ideas:</p>
+        <div class="techniques-grid">
+            <div class="technique-card">
+                <h5>Dot Voting</h5>
+                <p>Votación democrática con puntos adhesivos</p>
+            </div>
+            <div class="technique-card">
+                <h5>Análisis Costo-Beneficio</h5>
+                <p>Evaluación de recursos vs. impacto esperado</p>
+            </div>
+            <div class="technique-card">
+                <h5>Cuatro Categorías</h5>
+                <p>Más racional, Más atractiva, Favorita, Tiro largo</p>
+            </div>
+            <div class="technique-card">
+                <h5>Matriz Wow Now How</h5>
+                <p>Impacto vs. esfuerzo de implementación</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🔄 Proceso Iterativo</h2>
+        
+        <div class="process-flow">
+            <div class="process-step">
+                <h4>Sketching</h4>
+                <p>Bocetos rápidos para visualizar ideas</p>
+            </div>
+            <div class="arrow">→</div>
+            <div class="process-step">
+                <h4>Iteración</h4>
+                <p>Revisión basada en insights y feedback</p>
+            </div>
+            <div class="arrow">→</div>
+            <div class="process-step">
+                <h4>Documentación</h4>
+                <p>Registro de todo el proceso</p>
+            </div>
+            <div class="arrow">→</div>
+            <div class="process-step">
+                <h4>Testing</h4>
+                <p>Validación con usuarios reales</p>
+            </div>
+        </div>
+
+        <h3>🧪 Concept Testing</h3>
+        <p>Método de investigación para obtener feedback antes de invertir recursos en desarrollo completo.</p>
+        <ul>
+            <li><strong>Métodos:</strong> Encuestas, entrevistas, grupos focales, A/B testing</li>
+            <li><strong>Objetivo:</strong> Validar ideas y ahorrar recursos</li>
+            <li><strong>Timing:</strong> Ni muy temprano ni muy tarde en el proceso</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>📊 Caso de Estudio UX</h2>
+        <p>Estructura recomendada para documentar proyectos:</p>
+        
+        <div class="techniques-grid">
+            <div class="technique-card">
+                <h5>Resumen</h5>
+                <p>Descripción rápida del proyecto y logros</p>
+            </div>
+            <div class="technique-card">
+                <h5>Objetivo/Problema</h5>
+                <p>Definición clara del desafío a resolver</p>
+            </div>
+            <div class="technique-card">
+                <h5>Equipo y Rol</h5>
+                <p>Composición del equipo y responsabilidades</p>
+            </div>
+            <div class="technique-card">
+                <h5>Herramientas</h5>
+                <p>Software y recursos utilizados</p>
+            </div>
+            <div class="technique-card">
+                <h5>Timeline</h5>
+                <p>Duración del proyecto</p>
+            </div>
+            <div class="technique-card">
+                <h5>Proceso</h5>
+                <p>Metodología y pasos seguidos</p>
+            </div>
+            <div class="technique-card">
+                <h5>Resultados</h5>
+                <p>Soluciones finales y hallazgos clave</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="additional-info">
+        <h3>📚 Información Complementaria Actualizada 2025</h3>
+        
+        <h4>🔍 Evolución del Design Thinking</h4>
+        <p>Desde sus orígenes en Stanford y IDEO en los 90s, el Design Thinking ha evolucionado significativamente. En 2025, vemos una integración mayor con metodologías ágiles, AI/ML, y enfoques de sostenibilidad. La pandemia de COVID-19 aceleró la adopción de herramientas digitales y metodologías remotas.</p>
+        
+        <h4>🎓 Aplicaciones Emergentes 2025</h4>
+        <ul>
+            <li><strong>HealthTech:</strong> Telemedicina, wearables, y AI diagnóstica</li>
+            <li><strong>EdTech:</strong> Aprendizaje personalizado y realidad virtual educativa</li>
+            <li><strong>FinTech:</strong> Inclusión financiera y blockchain UX</li>
+            <li><strong>Climate Tech:</strong> Soluciones para cambio climático y economía circular</li>
+            <li><strong>Web3/Metaverse:</strong> Experiencias inmersivas y descentralizadas</li>
+            <li><strong>Government Innovation:</strong> Servicios públicos digitales y participación ciudadana</li>
+        </ul>
+        
+        <h4>🧠 Principios Psicológicos Actualizados</h4>
+        <ul>
+            <li><strong>Behavioral Design:</strong> Aplicación de nudges y economía conductual</li>
+            <li><strong>Inclusive Design:</strong> Consideración de neurodiversidad y accesibilidad</li>
+            <li><strong>Emotional AI:</strong> Reconocimiento y respuesta a estados emocionales</li>
+            <li><strong>Cognitive Load Theory:</strong> Optimización de la carga cognitiva en interfaces</li>
+            <li><strong>Social Psychology:</strong> Dinámicas grupales en plataformas digitales</li>
+        </ul>
+        
+        <h4>⚡ Stack Tecnológico 2025</h4>
+        <div class="techniques-grid">
+            <div class="technique-card">
+                <h5>🎨 Design & Prototype</h5>
+                <ul>
+                    <li><strong>Figma:</strong> Colaboración en tiempo real</li>
+                    <li><strong>Framer:</strong> Prototipos interactivos avanzados</li>
+                    <li><strong>Spline:</strong> Diseño 3D accesible</li>
+                    <li><strong>Midjourney/DALL-E:</strong> Generación de imágenes AI</li>
+                </ul>
+            </div>
+            <div class="technique-card">
+                <h5>🔬 Research & Analytics</h5>
+                <ul>
+                    <li><strong>Dovetail:</strong> Research repository inteligente</li>
+                    <li><strong>Amplitude:</strong> Product analytics de comportamiento</li>
+                    <li><strong>Hotjar:</strong> Heatmaps y user recordings</li>
+                    <li><strong>Otter.ai:</strong> Transcripción automática de entrevistas</li>
+                </ul>
+            </div>
+            <div class="technique-card">
+                <h5>🤝 Collaboration</h5>
+                <ul>
+                    <li><strong>Notion:</strong> Documentación all-in-one</li>
+                    <li><strong>Luma:</strong> Scheduling y calendar coordination</li>
+                    <li><strong>Around:</strong> Video calls optimizadas para creatividad</li>
+                    <li><strong>Discord:</strong> Comunidades de práctica</li>
+                </ul>
+            </div>
+            <div class="technique-card">
+                <h5>🚀 Emerging Tech</h5>
+                <ul>
+                    <li><strong>ChatGPT/Claude:</strong> AI assistant para research</li>
+                    <li><strong>Stable Diffusion:</strong> Generación de conceptos visuales</li>
+                    <li><strong>VR/AR Tools:</strong> Prototipado espacial</li>
+                    <li><strong>No-code platforms:</strong> Validación rápida de MVPs</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h4>📈 KPIs y Métricas Modernas</h4>
+        <div class="techniques-grid">
+            <div class="technique-card">
+                <h5>🎯 Product Metrics</h5>
+                <ul>
+                    <li><strong>HEART Framework:</strong> Happiness, Engagement, Adoption, Retention, Task Success</li>
+                    <li><strong>AARRR Funnel:</strong> Acquisition, Activation, Retention, Revenue, Referral</li>
+                    <li><strong>OKRs:</strong> Objectives and Key Results alignment</li>
+                </ul>
+            </div>
+            <div class="technique-card">
+                <h5>🌱 Impact Metrics</h5>
+                <ul>
+                    <li><strong>ESG Scores:</strong> Environmental, Social, Governance impact</li>
+                    <li><strong>Accessibility Scores:</strong> WCAG compliance y inclusividad</li>
+                    <li><strong>Carbon Footprint:</strong> Impacto ambiental digital</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h4>🚨 Desafíos Éticos Actuales</h4>
+        <ul>
+            <li><strong>Privacy by Design:</strong> GDPR, CCPA y protección de datos</li>
+            <li><strong>AI Bias:</strong> Algoritmos justos y representación equitativa</li>
+            <li><strong>Digital Wellbeing:</strong> Prevención de adicción y tiempo de pantalla saludable</li>
+            <li><strong>Dark Patterns:</strong> Evitar manipulación y práticas deceptivas</li>
+            <li><strong>Accessibility:</strong> Diseño universal y tecnología asistiva</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>🏆 Ejemplos Reales de Design Thinking</h2>
+        
+        <h3>🚗 Airbnb - Redefiniendo la Hospitalidad</h3>
+        <div class="key-points">
+            <h4>Problema Original</h4>
+            <p>Los fundadores necesitaban ingresos extra para pagar el alquiler.</p>
+            <h4>Proceso de Design Thinking</h4>
+            <ul>
+                <li><strong>Empatizar:</strong> Entendieron que los viajeros buscaban experiencias auténticas y locales</li>
+                <li><strong>Definir:</strong> "Los viajeros quieren sentirse como en casa, no como turistas"</li>
+                <li><strong>Idear:</strong> Plataforma que conecte anfitriones locales con viajeros</li>
+                <li><strong>Prototipar:</strong> Sitio web simple para rentar colchones de aire</li>
+                <li><strong>Testear:</strong> Iteraciones basadas en feedback de usuarios</li>
+            </ul>
+            <h4>Resultado</h4>
+            <p>Revolución en la industria hotelera con más de 4 millones de anfitriones globalmente.</p>
+        </div>
+
+        <h3>🏥 Kaiser Permanente - Mejorando la Experiencia del Paciente</h3>
+        <div class="key-points">
+            <h4>Problema</h4>
+            <p>Los cambios de turno de enfermeras causaban errores de comunicación críticos.</p>
+            <h4>Solución Design Thinking</h4>
+            <ul>
+                <li><strong>Observación:</strong> Shadowing de enfermeras durante cambios de turno</li>
+                <li><strong>Insights:</strong> La información se perdía en conversaciones apresuradas</li>
+                <li><strong>Ideación:</strong> Sesiones de brainstorming con personal médico</li>
+                <li><strong>Prototipo:</strong> Sistema de comunicación visual y digital</li>
+            </ul>
+            <h4>Impacto</h4>
+            <p>Reducción del 50% en errores médicos y mejora significativa en satisfacción del paciente.</p>
+        </div>
+
+        <h3>📱 Instagram - Simplificando la Fotografía Social</h3>
+        <div class="key-points">
+            <h4>Evolución del Problema</h4>
+            <p>Originalmente era "Burbn", una app compleja de check-in con múltiples funciones.</p>
+            <h4>Redefinición</h4>
+            <ul>
+                <li><strong>Investigación:</strong> Los usuarios solo usaban las funciones de foto</li>
+                <li><strong>Pivote:</strong> Enfoque exclusivo en compartir fotos con filtros</li>
+                <li><strong>Simplicidad:</strong> Interfaz minimalista y flujo intuitivo</li>
+            </ul>
+            <h4>Resultado</h4>
+            <p>Adquisición por Facebook en $1 billón y 2 billones de usuarios activos.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🛠️ Ejercicios Prácticos de Design Thinking</h2>
+        
+        <h3>🎯 Ejercicio 1: Rediseño de la Experiencia de Espera</h3>
+        <div class="technique-card">
+            <h5>Problema</h5>
+            <p>Los usuarios se frustran esperando en filas de bancos, clínicas o tiendas.</p>
+            <h5>Tu Desafío</h5>
+            <ul>
+                <li>Aplica las 5 W's para definir el problema específico</li>
+                <li>Usa "Crazy 8's" para generar 8 soluciones en 8 minutos</li>
+                <li>Selecciona 3 ideas usando Dot Voting</li>
+                <li>Crea un prototipo de papel de tu mejor idea</li>
+            </ul>
+        </div>
+
+        <h3>🍕 Ejercicio 2: App de Delivery Sostenible</h3>
+        <div class="technique-card">
+            <h5>Contexto</h5>
+            <p>Diseñar una aplicación de delivery que promueva prácticas sostenibles.</p>
+            <h5>Proceso Sugerido</h5>
+            <ol>
+                <li><strong>Empatizar:</strong> Entrevista a 3 personas sobre sus hábitos de delivery</li>
+                <li><strong>Definir:</strong> Crea un problem statement usando insights reales</li>
+                <li><strong>Idear:</strong> Usa S.C.A.M.P.E.R. para generar features innovadoras</li>
+                <li><strong>Prototipar:</strong> Sketches de pantallas principales</li>
+                <li><strong>Testear:</strong> Concept testing con usuarios potenciales</li>
+            </ol>
+        </div>
+
+        <h3>🎓 Ejercicio 3: Mejorando la Experiencia Educativa Online</h3>
+        <div class="technique-card">
+            <h5>Desafío</h5>
+            <p>Los estudiantes tienen dificultades para mantenerse motivados en clases virtuales.</p>
+            <h5>Metodología</h5>
+            <ul>
+                <li>Usa Mind Mapping para explorar todos los factores del problema</li>
+                <li>Aplica "Worst Possible Idea" para liberar creatividad</li>
+                <li>Evalúa ideas con la Matriz Wow Now How</li>
+                <li>Desarrolla un journey map del estudiante ideal</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>⚠️ Errores Comunes y Cómo Evitarlos</h2>
+        
+        <div class="techniques-grid">
+            <div class="technique-card">
+                <h5>❌ Saltarse la Investigación</h5>
+                <p><strong>Error:</strong> Asumir que conoces al usuario</p>
+                <p><strong>Solución:</strong> Siempre validar suposiciones con datos reales</p>
+            </div>
+            <div class="technique-card">
+                <h5>❌ Enamorarse de la Primera Idea</h5>
+                <p><strong>Error:</strong> No explorar alternativas suficientes</p>
+                <p><strong>Solución:</strong> Generar mínimo 20 ideas antes de evaluar</p>
+            </div>
+            <div class="technique-card">
+                <h5>❌ Definir Problemas Demasiado Amplios</h5>
+                <p><strong>Error:</strong> "Mejorar la experiencia del usuario"</p>
+                <p><strong>Solución:</strong> Ser específico: "Reducir el tiempo de checkout"</p>
+            </div>
+            <div class="technique-card">
+                <h5>❌ Prototipos Demasiado Perfectos</h5>
+                <p><strong>Error:</strong> Invertir mucho tiempo en detalles</p>
+                <p><strong>Solución:</strong> Prototipos "feos" pero funcionales</p>
+            </div>
+            <div class="technique-card">
+                <h5>❌ No Testear con Usuarios Reales</h5>
+                <p><strong>Error:</strong> Feedback solo interno del equipo</p>
+                <p><strong>Solución:</strong> 5 usuarios reales > 50 opiniones internas</p>
+            </div>
+            <div class="technique-card">
+                <h5>❌ Seguir el Proceso Linealmente</h5>
+                <p><strong>Error:</strong> Tratar Design Thinking como waterfall</p>
+                <p><strong>Solución:</strong> Iterar y volver a etapas anteriores</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🔧 Plantillas y Templates Útiles</h2>
+        
+        <h3>📝 Template: Problem Statement</h3>
+        <div class="highlight">
+            <strong>Formato:</strong><br>
+            "Hemos observado que <strong>[grupo de usuarios]</strong> experimenta <strong>[problema específico]</strong> cuando <strong>[contexto/situación]</strong>. Esto es importante porque <strong>[impacto/consecuencia]</strong>."
+            <br><br>
+            <strong>Ejemplo:</strong><br>
+            "Hemos observado que <strong>estudiantes universitarios de 18-25 años</strong> experimenta <strong>dificultad para encontrar compañeros de estudio confiables</strong> cuando <strong>se preparan para exámenes finales</strong>. Esto es importante porque <strong>reduce su rendimiento académico y aumenta el estrés</strong>."
+        </div>
+
+        <h3>🎯 Template: How Might We (HMW)</h3>
+        <div class="highlight">
+            <strong>Formato:</strong> "¿Cómo podríamos [acción] para [usuario] de manera que [beneficio]?"
+            <br><br>
+            <strong>Ejemplos:</strong>
+            <ul>
+                <li>"¿Cómo podríamos simplificar el proceso de registro para nuevos usuarios de manera que se complete en menos de 2 minutos?"</li>
+                <li>"¿Cómo podríamos gamificar el aprendizaje para estudiantes de manera que mantengan el engagement durante todo el curso?"</li>
+                <li>"¿Cómo podríamos personalizar las recomendaciones para usuarios frecuentes de manera que descubran contenido relevante?"</li>
+            </ul>
+        </div>
+
+        <h3>📊 Template: Concept Testing</h3>
+        <div class="key-points">
+            <h4>Preguntas Clave para Testing</h4>
+            <ol>
+                <li><strong>Comprensión:</strong> "¿Qué crees que hace este producto/servicio?"</li>
+                <li><strong>Relevancia:</strong> "¿Es esto algo que necesitas o usarías?"</li>
+                <li><strong>Diferenciación:</strong> "¿En qué se diferencia de soluciones existentes?"</li>
+                <li><strong>Valor:</strong> "¿Qué valor principal te aportaría?"</li>
+                <li><strong>Barreras:</strong> "¿Qué te impediría usar esto?"</li>
+                <li><strong>Mejoras:</strong> "¿Qué cambiarías o agregarías?"</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🚀 Tendencias Actuales en Design Thinking</h2>
+        
+        <h3>🤖 Design Thinking + Inteligencia Artificial</h3>
+        <div class="example-card">
+            <h4>AI-Assisted Ideation</h4>
+            <p>Herramientas como GPT-4, Midjourney y Bing Create están revolucionando la fase de ideación:</p>
+            <ul>
+                <li><strong>Generación de Ideas:</strong> AI genera conceptos basados en briefs específicos</li>
+                <li><strong>Análisis de Sentimientos:</strong> Procesamiento de feedback de usuarios a gran escala</li>
+                <li><strong>Personalización:</strong> Soluciones adaptadas a micro-segmentos de usuarios</li>
+                <li><strong>Prototipado Rápido:</strong> Generación automática de wireframes y mockups</li>
+            </ul>
+            <div class="warning-box">
+                <h4>⚠️ Consideración Importante</h4>
+                <p>La AI debe complementar, no reemplazar, la empatía humana y el entendimiento contextual que son fundamentales en Design Thinking.</p>
+            </div>
+        </div>
+
+        <h3>🌍 Design Thinking Sostenible</h3>
+        <div class="example-card">
+            <h4>Diseño Consciente del Impacto</h4>
+            <p>Integración de consideraciones ambientales y sociales en cada etapa:</p>
+            <ul>
+                <li><strong>Empatizar:</strong> Incluir stakeholders ambientales y comunidades afectadas</li>
+                <li><strong>Definir:</strong> Problemas que consideren impacto a largo plazo</li>
+                <li><strong>Idear:</strong> Soluciones circulares y regenerativas</li>
+                <li><strong>Prototipar:</strong> Materiales sostenibles y procesos de bajo impacto</li>
+                <li><strong>Testear:</strong> Métricas que incluyan huella ambiental</li>
+            </ul>
+        </div>
+
+        <h3>🏠 Remote Design Thinking</h3>
+        <div class="example-card">
+            <h4>Adaptaciones para Equipos Distribuidos</h4>
+            <p>COVID-19 aceleró la evolución hacia metodologías remotas:</p>
+            <ul>
+                <li><strong>Herramientas:</strong> Miro, Figma, Zoom, Slack para colaboración async</li>
+                <li><strong>Técnicas Adaptadas:</strong> Digital sticky notes, breakout rooms, tiempo de reflexión</li>
+                <li><strong>Challenges:</strong> Mantener energía grupal y serendipidad</li>
+                <li><strong>Beneficios:</strong> Mayor diversidad geográfica, documentación automática</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🎯 Herramientas Modernas de Design Thinking 2025</h2>
+        
+        <div class="techniques-grid">
+            <div class="technique-card">
+                <h5>🧠 Ideación Digital</h5>
+                <ul>
+                    <li><strong>Miro:</strong> Whiteboarding colaborativo</li>
+                    <li><strong>Stormboard:</strong> Brainstorming estructurado</li>
+                    <li><strong>IdeaBoardz:</strong> Retrospectivas y ideación</li>
+                    <li><strong>Conceptboard:</strong> Visual collaboration</li>
+                </ul>
+            </div>
+            <div class="technique-card">
+                <h5>🔍 Research & Testing</h5>
+                <ul>
+                    <li><strong>Maze:</strong> User testing automatizado</li>
+                    <li><strong>UserTesting:</strong> Feedback de usuarios reales</li>
+                    <li><strong>Typeform:</strong> Encuestas engaging</li>
+                    <li><strong>Loom:</strong> Video research y demos</li>
+                </ul>
+            </div>
+            <div class="technique-card">
+                <h5>🎨 Prototipado</h5>
+                <ul>
+                    <li><strong>Figma:</strong> Design colaborativo en tiempo real</li>
+                    <li><strong>Principle:</strong> Animaciones y micro-interacciones</li>
+                    <li><strong>Framer:</strong> Prototipos de alta fidelidad</li>
+                    <li><strong>POP:</strong> App prototyping desde sketches</li>
+                </ul>
+            </div>
+            <div class="technique-card">
+                <h5>📊 Análisis y Métricas</h5>
+                <ul>
+                    <li><strong>Hotjar:</strong> Heatmaps y session recordings</li>
+                    <li><strong>Mixpanel:</strong> Event tracking y analytics</li>
+                    <li><strong>Amplitude:</strong> Product analytics avanzado</li>
+                    <li><strong>Fullstory:</strong> Digital experience insights</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📚 Plan de Estudio Avanzado</h2>
+        
+        <h3>🎓 Nivel Principiante (1-3 meses)</h3>
+        <ol class="methodology-steps">
+            <li>
+                <strong>Fundamentos Teóricos</strong>
+                <p>Estudia los 5 pasos del Design Thinking, historia de IDEO y Stanford d.school</p>
+                <span class="success-metric">Meta: Explicar DT en 2 minutos</span>
+            </li>
+            <li>
+                <strong>Práctica Individual</strong>
+                <p>Completa 3 ejercicios simples: rediseño de app móvil, mejora de experiencia cotidiana</p>
+                <span class="success-metric">Meta: Portfolio con 3 casos</span>
+            </li>
+            <li>
+                <strong>Herramientas Básicas</strong>
+                <p>Domina Miro, Figma básico, y técnicas de entrevista</p>
+                <span class="success-metric">Meta: Crear wireframes funcionales</span>
+            </li>
+        </ol>
+
+        <h3>🚀 Nivel Intermedio (3-6 meses)</h3>
+        <ol class="methodology-steps">
+            <li>
+                <strong>Proyectos Colaborativos</strong>
+                <p>Únete a hackathons, participa en equipos multidisciplinarios</p>
+                <span class="success-metric">Meta: Liderar 1 proyecto grupal</span>
+            </li>
+            <li>
+                <strong>Especialización</strong>
+                <p>Enfócate en UX Research, Service Design o Innovation Strategy</p>
+                <span class="success-metric">Meta: Certificación en área elegida</span>
+            </li>
+            <li>
+                <strong>Herramientas Avanzadas</strong>
+                <p>Aprende prototipado avanzado, analytics y testing automatizado</p>
+                <span class="success-metric">Meta: A/B tests exitosos</span>
+            </li>
+        </ol>
+
+        <h3>🏆 Nivel Avanzado (6+ meses)</h3>
+        <ol class="methodology-steps">
+            <li>
+                <strong>Consultoría y Mentoring</strong>
+                <p>Asesora startups, enseña workshops, publica contenido</p>
+                <span class="success-metric">Meta: 10+ profesionales mentoreados</span>
+            </li>
+            <li>
+                <strong>Innovación y Research</strong>
+                <p>Desarrolla nuevas metodologías, contribuye a la comunidad DT</p>
+                <span class="success-metric">Meta: Presentar en conferencias</span>
+            </li>
+            <li>
+                <strong>Liderazgo Estratégico</strong>
+                <p>Implementa DT a nivel organizacional, mide ROI de innovación</p>
+                <span class="success-metric">Meta: Transformación cultural exitosa</span>
+            </li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>🔗 Recursos Adicionales para Profundizar</h2>
+        
+        <h3>📖 Libros Esenciales</h3>
+        <div class="techniques-grid">
+            <div class="technique-card">
+                <h5>📚 Nivel Fundacional</h5>
+                <ul>
+                    <li>"Design Thinking" - Tim Brown (IDEO)</li>
+                    <li>"The Design of Everyday Things" - Don Norman</li>
+                    <li>"Sprint" - Jake Knapp (Google Ventures)</li>
+                    <li>"Lean UX" - Jeff Gothelf</li>
+                </ul>
+            </div>
+            <div class="technique-card">
+                <h5>🚀 Nivel Avanzado</h5>
+                <ul>
+                    <li>"The Innovator's Dilemma" - Clayton Christensen</li>
+                    <li>"Value Proposition Design" - Alexander Osterwalder</li>
+                    <li>"Gamestorming" - Dave Gray</li>
+                    <li>"Service Design Thinking" - Marc Stickdorn</li>
+                </ul>
+            </li>
+        </div>
+
+        <h3>🎥 Cursos y Certificaciones Online</h3>
+        <div class="techniques-grid">
+            <div class="technique-card">
+                <h5>🎓 Plataformas Académicas</h5>
+                <ul>
+                    <li><strong>Stanford d.school:</strong> Certificación oficial en DT</li>
+                    <li><strong>IDEO U:</strong> Cursos prácticos con proyectos reales</li>
+                    <li><strong>Coursera:</strong> Universidad de Virginia - Design Thinking</li>
+                    <li><strong>edX:</strong> MIT - Introduction to Design Thinking</li>
+                </ul>
+            </div>
+            <div class="technique-card">
+                <h5>💼 Enfoque Profesional</h5>
+                <ul>
+                    <li><strong>LinkedIn Learning:</strong> Design Thinking for Innovators</li>
+                    <li><strong>Udemy:</strong> Complete Design Thinking Guide</li>
+                    <li><strong>Pluralsight:</strong> UX Design Process</li>
+                    <li><strong>Interaction Design Foundation:</strong> Certificación IxDF</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>🌐 Comunidades y Eventos</h3>
+        <div class="techniques-grid">
+            <div class="technique-card">
+                <h5>🤝 Comunidades Online</h5>
+                <ul>
+                    <li><strong>Design+Research:</strong> Slack community</li>
+                    <li><strong>IxDA:</strong> Interaction Design Association</li>
+                    <li><strong>UX Mastery:</strong> Forums y mentoring</li>
+                    <li><strong>Designer Hangout:</strong> Slack para UXers</li>
+                </ul>
+            </div>
+            <div class="technique-card">
+                <h5>🎪 Eventos y Conferencias</h5>
+                <ul>
+                    <li><strong>UX Week:</strong> Adaptive Path</li>
+                    <li><strong>Design+Research:</strong> Annual conference</li>
+                    <li><strong>Service Design Global:</strong> International network</li>
+                    <li><strong>Local UX meetups:</strong> Networking regional</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

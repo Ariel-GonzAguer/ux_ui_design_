@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principios de Diseño de Software - Guía de Estudio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        
+        h2 {
+            color: #34495e;
+            background: linear-gradient(90deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 35px;
+            margin-bottom: 20px;
+        }
+        
+        h3 {
+            color: #2980b9;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+            margin-top: 25px;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #3498db;
+        }
+        
+        .principle {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .example {
+            background: #e8f5e8;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid #27ae60;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        
+        tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .acronym {
+            background: #3498db;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        .quiz {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+        
+        .quiz h3 {
+            color: white;
+            border: none;
+            padding: 0;
+        }
+        
+        .quiz ol {
+            margin: 15px 0;
+        }
+        
+        .quiz li {
+            margin: 10px 0;
+            padding: 5px 0;
+        }
+        
+        /* Nuevos estilos para secciones enriquecidas */
+        .modern-examples {
+            background: linear-gradient(135deg, #a8e6cf 0%, #7fcdcd 100%);
+            color: #2c3e50;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .example-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .example-card h5 {
+            color: #27ae60;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .trends-2025 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .trend-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .advanced-tools {
+            background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .tool-category {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        
+        .practical-exercises {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .exercise-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .metrics-section {
+            background: linear-gradient(135deg, #55a3ff 0%, #003d82 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .metric-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .metric-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #74b9ff;
+            margin-bottom: 10px;
+        }
+        
+        .best-practices {
+            background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .practice-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .code-quality-metrics {
+            background: #2c3e50;
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .quality-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .quality-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .metric-grid, .quality-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Principios de Diseño de Software</h1>
+        <p style="text-align: center; font-style: italic; color: #666; font-size: 1.1em;">
+            Guía completa para el desarrollo de software robusto y mantenible
+        </p>
+
+        <div class="highlight">
+            <h3>🎯 Objetivos de Esta Guía</h3>
+            <p>Esta guía te ayudará a comprender los principios fundamentales del diseño de software, incluyendo arquitectura, patrones de diseño, y mejores prácticas para crear aplicaciones flexibles y mantenibles.</p>
+        </div>
+
+        <h2>🏗️ Fundamentos de la Arquitectura de Software</h2>
+        
+        <h3>¿Qué es la Arquitectura de Software?</h3>
+        <p>La <strong>arquitectura de software</strong> se refiere al diseño de alto nivel de un sistema, incluyendo la organización de componentes y sus interacciones. Involucra:</p>
+        
+        <ul>
+            <li><strong>Organización:</strong> Cómo estructuramos nuestro software</li>
+            <li><strong>Comunicación:</strong> Cómo interactúan las partes entre sí</li>
+            <li><strong>Gestión de datos:</strong> Cómo movemos y almacenamos información</li>
+        </ul>
+
+        <div class="example">
+            <h4>💡 Ejemplo Práctico</h4>
+            <p><strong>Analogía con una casa:</strong> La arquitectura de software es como el plano de una casa. Define dónde van las habitaciones (componentes), cómo se conectan (interfaces), y qué servicios necesitan (electricidad, agua = datos).</p>
+        </div>
+
+        <h3>Diseñando para el Cambio</h3>
+        <p>Los sistemas exitosos deben adaptarse a nuevos requisitos. Para lograr esto:</p>
+        
+        <div class="principle">
+            <ul>
+                <li>Cada componente debe tener un <strong>propósito claro</strong></li>
+                <li>Las partes que probablemente cambien deben estar <strong>separadas</strong></li>
+                <li>Las clases deben tener <strong>interfaces claras</strong></li>
+                <li>Usar <strong>patrones de diseño estándar</strong></li>
+            </ul>
+        </div>
+
+        <div class="warning">
+            <strong>⚠️ Consejo Importante:</strong> Si no estás seguro de qué base de datos usar, mantén el código de acceso a datos separado del resto del sistema. Esto facilita cambios futuros.
+        </div>
+
+        <h2>📏 Principios Generales de Diseño</h2>
+
+        <h3><span class="acronym">YAGNI</span> - You Aren't Going to Need It</h3>
+        <div class="principle">
+            <p><strong>Principio:</strong> "No lo vas a necesitar" - Diseña solo para las funcionalidades actuales.</p>
+            <p><strong>Evita:</strong> Agregar características "por si acaso" las necesitas en el futuro.</p>
+        </div>
+
+        <div class="example">
+            <h4>Ejemplo YAGNI</h4>
+            <p><strong>❌ Malo:</strong> Agregar un sistema de red completo a un juego de un jugador "por si queremos multijugador"</p>
+            <p><strong>✅ Bueno:</strong> Implementar el multijugador solo cuando realmente lo necesites</p>
+        </div>
+
+        <h3><span class="acronym">KISS</span> - Keep It Simple, Silly</h3>
+        <div class="principle">
+            <p><strong>Principio:</strong> "Manténlo simple" - La simplicidad es preferible a la complejidad innecesaria.</p>
+            <p><strong>Meta:</strong> Sistemas fáciles de entender y modificar.</p>
+        </div>
+
+        <h3><span class="acronym">DRY</span> - Don't Repeat Yourself</h3>
+        <div class="principle">
+            <p><strong>Principio:</strong> "No te repitas" - Cada pieza de conocimiento debe tener una representación única en el sistema.</p>
+            <p><strong>Aplicación:</strong> Elimina duplicación de código creando funciones, clases o módulos reutilizables.</p>
+        </div>
+
+        <div class="warning">
+            <strong>⚠️ Cuidado:</strong> No apliques DRY excesivamente. La abstracción prematura puede crear complejidad innecesaria.
+        </div>
+
+        <h2>🔷 Programación Orientada a Objetos (POO)</h2>
+
+        <h3>Los Cuatro Pilares de la POO</h3>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pilar</th>
+                        <th>Definición</th>
+                        <th>Beneficio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Abstracción</strong></td>
+                        <td>Representar características esenciales omitiendo detalles innecesarios</td>
+                        <td>Simplifica el diseño y reduce complejidad</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Encapsulación</strong></td>
+                        <td>Ocultar detalles internos y exponer solo interfaces necesarias</td>
+                        <td>Mejora seguridad y mantenibilidad</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Herencia</strong></td>
+                        <td>Crear nuevas clases basadas en clases existentes</td>
+                        <td>Promueve reutilización de código</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Polimorfismo</strong></td>
+                        <td>Diferentes objetos responden de manera distinta a la misma operación</td>
+                        <td>Aumenta flexibilidad y extensibilidad</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>POO en JavaScript</h3>
+        <p>JavaScript implementa POO de manera única:</p>
+
+        <div class="example">
+            <h4>Características Especiales de JavaScript:</h4>
+            <ul>
+                <li><strong>Herencia Prototípica:</strong> Los objetos heredan directamente de otros objetos</li>
+                <li><strong>Clases ES6:</strong> Sintaxis moderna para definir clases</li>
+                <li><strong>Propiedades Privadas:</strong> Usando notación <code>#</code> o closures</li>
+                <li><strong>Flexibilidad:</strong> Permite múltiples paradigmas de programación</li>
+            </ul>
+        </div>
+
+        <h2>🔧 Principios SOLID</h2>
+        <p>Los principios <span class="acronym">SOLID</span> son fundamentales para el diseño orientado a objetos:</p>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Letra</th>
+                        <th>Principio</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>S</strong></td>
+                        <td>Single Responsibility</td>
+                        <td>Una clase debe tener solo una razón para cambiar</td>
+                    </tr>
+                    <tr>
+                        <td><strong>O</strong></td>
+                        <td>Open-Closed</td>
+                        <td>Abierto para extensión, cerrado para modificación</td>
+                    </tr>
+                    <tr>
+                        <td><strong>L</strong></td>
+                        <td>Liskov Substitution</td>
+                        <td>Las subclases deben ser sustituibles por sus clases padre</td>
+                    </tr>
+                    <tr>
+                        <td><strong>I</strong></td>
+                        <td>Interface Segregation</td>
+                        <td>Las interfaces deben ser específicas para cada cliente</td>
+                    </tr>
+                    <tr>
+                        <td><strong>D</strong></td>
+                        <td>Dependency Inversion</td>
+                        <td>Depender de abstracciones, no de implementaciones concretas</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Ejemplo Detallado: Single Responsibility Principle</h3>
+        
+        <h4>❌ Violando SRP - Clase Enemy Original:</h4>
+        <div style="background: #ffebee; padding: 20px; border-radius: 8px; border-left: 4px solid #f44336; margin: 15px 0;">
+            <p><strong>Problema:</strong> Una sola clase maneja múltiples responsabilidades</p>
+            <pre style="background: #fff; padding: 15px; border-radius: 5px; overflow-x: auto;"><code>class Enemy {
+    constructor(name, health, damage, x, y) {
+        this.name = name;
+        this.health = health;
+        this.damage = damage;
+        this.x = x;
+        this.y = y;
+        this.alive = true;
+    }
+
+    // ❌ RESPONSABILIDAD 1: Lógica de combate
+    attack(target) {
+        target.takeDamage(this.damage);
+        console.log(`${this.name} ataca por ${this.damage} puntos!`);
+    }
+
+    takeDamage(amount) {
+        this.health -= amount;
+        if (this.health <= 0) {
+            this.alive = false;
+            this.die();
+        }
+    }
+
+    // ❌ RESPONSABILIDAD 2: Renderizado visual
+    render(canvas) {
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = this.alive ? 'red' : 'gray';
+        ctx.fillRect(this.x, this.y, 50, 50);
+        
+        // Dibujar barra de vida
+        ctx.fillStyle = 'green';
+        ctx.fillRect(this.x, this.y - 10, (this.health / 100) * 50, 5);
+    }
+
+    // ❌ RESPONSABILIDAD 3: Persistencia en base de datos
+    saveToDatabase() {
+        const enemyData = {
+            name: this.name,
+            health: this.health,
+            x: this.x,
+            y: this.y,
+            alive: this.alive
+        };
+        // Código para guardar en base de datos
+        localStorage.setItem(`enemy_${this.name}`, JSON.stringify(enemyData));
+    }
+
+    loadFromDatabase(name) {
+        const data = localStorage.getItem(`enemy_${name}`);
+        if (data) {
+            const enemyData = JSON.parse(data);
+            this.health = enemyData.health;
+            this.x = enemyData.x;
+            this.y = enemyData.y;
+            this.alive = enemyData.alive;
+        }
+    }
+
+    // ❌ RESPONSABILIDAD 4: Lógica de IA
+    updateAI(player) {
+        // Movimiento hacia el jugador
+        if (this.x < player.x) this.x += 2;
+        if (this.x > player.x) this.x -= 2;
+        if (this.y < player.y) this.y += 2;
+        if (this.y > player.y) this.y -= 2;
+    }
+}</code></pre>
+            <p><strong>¿Por qué es problemático?</strong></p>
+            <ul>
+                <li>Si cambias la lógica de renderizado, podrías afectar la lógica de combate</li>
+                <li>Difícil de testear cada funcionalidad por separado</li>
+                <li>Múltiples razones para modificar la clase</li>
+                <li>Código difícil de mantener y reutilizar</li>
+            </ul>
+        </div>
+
+        <h4>✅ Aplicando SRP - Clases Separadas:</h4>
+        <div style="background: #e8f5e8; padding: 20px; border-radius: 8px; border-left: 4px solid #4caf50; margin: 15px 0;">
+            <p><strong>Solución:</strong> Separar responsabilidades en clases específicas</p>
+            
+            <h5>1. EnemyState - Solo maneja el estado del enemigo</h5>
+            <pre style="background: #fff; padding: 15px; border-radius: 5px; overflow-x: auto;"><code>class EnemyState {
+    constructor(name, health, damage, x, y) {
+        this.name = name;
+        this.health = health;
+        this.maxHealth = health;
+        this.damage = damage;
+        this.x = x;
+        this.y = y;
+        this.alive = true;
+    }
+
+    takeDamage(amount) {
+        this.health = Math.max(0, this.health - amount);
+        this.alive = this.health > 0;
+    }
+
+    move(newX, newY) {
+        this.x = newX;
+        this.y = newY;
+    }
+
+    getHealthPercentage() {
+        return this.health / this.maxHealth;
+    }
+}</code></pre>
+
+            <h5>2. EnemyBehavior - Solo maneja la lógica de combate</h5>
+            <pre style="background: #fff; padding: 15px; border-radius: 5px; overflow-x: auto;"><code>class EnemyBehavior {
+    constructor(enemyState) {
+        this.enemyState = enemyState;
+    }
+
+    attack(target) {
+        if (!this.enemyState.alive) return;
+        
+        target.takeDamage(this.enemyState.damage);
+        console.log(`${this.enemyState.name} ataca por ${this.enemyState.damage} puntos!`);
+    }
+
+    updateAI(playerX, playerY) {
+        if (!this.enemyState.alive) return;
+
+        // Lógica de movimiento hacia el jugador
+        const speed = 2;
+        const deltaX = playerX - this.enemyState.x;
+        const deltaY = playerY - this.enemyState.y;
+        
+        if (Math.abs(deltaX) > speed) {
+            this.enemyState.x += deltaX > 0 ? speed : -speed;
+        }
+        if (Math.abs(deltaY) > speed) {
+            this.enemyState.y += deltaY > 0 ? speed : -speed;
+        }
+    }
+}</code></pre>
+
+            <h5>3. EnemyDisplay - Solo maneja el renderizado</h5>
+            <pre style="background: #fff; padding: 15px; border-radius: 5px; overflow-x: auto;"><code>class EnemyDisplay {
+    constructor(enemyState) {
+        this.enemyState = enemyState;
+    }
+
+    render(canvas) {
+        const ctx = canvas.getContext('2d');
+        
+        // Dibujar cuerpo del enemigo
+        ctx.fillStyle = this.enemyState.alive ? '#ff4444' : '#666666';
+        ctx.fillRect(this.enemyState.x, this.enemyState.y, 50, 50);
+        
+        // Dibujar barra de vida
+        if (this.enemyState.alive) {
+            this.renderHealthBar(ctx);
+        }
+    }
+
+    renderHealthBar(ctx) {
+        const barWidth = 50;
+        const barHeight = 6;
+        const barX = this.enemyState.x;
+        const barY = this.enemyState.y - 10;
+        
+        // Fondo de la barra
+        ctx.fillStyle = '#333';
+        ctx.fillRect(barX, barY, barWidth, barHeight);
+        
+        // Vida actual
+        ctx.fillStyle = '#4caf50';
+        const healthWidth = barWidth * this.enemyState.getHealthPercentage();
+        ctx.fillRect(barX, barY, healthWidth, barHeight);
+    }
+}</code></pre>
+
+            <h5>4. EnemyStorage - Solo maneja la persistencia</h5>
+            <pre style="background: #fff; padding: 15px; border-radius: 5px; overflow-x: auto;"><code>class EnemyStorage {
+    static save(enemyState) {
+        const enemyData = {
+            name: enemyState.name,
+            health: enemyState.health,
+            maxHealth: enemyState.maxHealth,
+            damage: enemyState.damage,
+            x: enemyState.x,
+            y: enemyState.y,
+            alive: enemyState.alive
+        };
+        
+        try {
+            localStorage.setItem(`enemy_${enemyState.name}`, JSON.stringify(enemyData));
+            return true;
+        } catch (error) {
+            console.error('Error guardando enemigo:', error);
+            return false;
+        }
+    }
+
+    static load(name) {
+        try {
+            const data = localStorage.getItem(`enemy_${name}`);
+            if (data) {
+                const enemyData = JSON.parse(data);
+                return new EnemyState(
+                    enemyData.name,
+                    enemyData.health,
+                    enemyData.damage,
+                    enemyData.x,
+                    enemyData.y
+                );
+            }
+        } catch (error) {
+            console.error('Error cargando enemigo:', error);
+        }
+        return null;
+    }
+}</code></pre>
+
+            <h5>5. Uso integrado - Coordinador simple</h5>
+            <pre style="background: #fff; padding: 15px; border-radius: 5px; overflow-x: auto;"><code>class Enemy {
+    constructor(name, health, damage, x, y) {
+        this.state = new EnemyState(name, health, damage, x, y);
+        this.behavior = new EnemyBehavior(this.state);
+        this.display = new EnemyDisplay(this.state);
+    }
+
+    update(playerX, playerY) {
+        this.behavior.updateAI(playerX, playerY);
+    }
+
+    render(canvas) {
+        this.display.render(canvas);
+    }
+
+    attack(target) {
+        this.behavior.attack(target);
+    }
+
+    takeDamage(amount) {
+        this.state.takeDamage(amount);
+    }
+
+    save() {
+        return EnemyStorage.save(this.state);
+    }
+
+    static load(name) {
+        const state = EnemyStorage.load(name);
+        if (state) {
+            return new Enemy(state.name, state.health, state.damage, state.x, state.y);
+        }
+        return null;
+    }
+}</code></pre>
+
+            <p><strong>✅ Beneficios de aplicar SRP:</strong></p>
+            <ul>
+                <li><strong>Mantenimiento:</strong> Cambiar el renderizado no afecta la lógica de combate</li>
+                <li><strong>Testing:</strong> Puedes testear cada responsabilidad independientemente</li>
+                <li><strong>Reutilización:</strong> EnemyDisplay se puede usar para otros tipos de entidades</li>
+                <li><strong>Flexibilidad:</strong> Fácil cambiar de localStorage a una base de datos real</li>
+                <li><strong>Claridad:</strong> Cada clase tiene un propósito bien definido</li>
+            </ul>
+        </div>
+
+        <h2>🎨 Patrones de Diseño</h2>
+        
+        <div class="highlight">
+            <p><strong>Definición:</strong> Los patrones de diseño son soluciones reutilizables a problemas comunes en el desarrollo de software.</p>
+        </div>
+
+        <h3>¿Por Qué Usar Patrones de Diseño?</h3>
+        <ul>
+            <li>Facilitan el <strong>mantenimiento</strong> del código</li>
+            <li>Mejoran la <strong>comunicación</strong> entre desarrolladores</li>
+            <li>Proporcionan <strong>soluciones probadas</strong></li>
+            <li>Hacen el código más <strong>flexible al cambio</strong></li>
+        </ul>
+
+        <h3>Tipos de Patrones de Diseño</h3>
+
+        <div class="principle">
+            <h4>🏭 Patrones Creacionales</h4>
+            <p><strong>Propósito:</strong> Resolver problemas relacionados con la creación de objetos.</p>
+            <p><strong>Ejemplo - Singleton:</strong> Garantiza que una clase tenga solo una instancia (útil para conexiones de base de datos).</p>
+        </div>
+
+        <div class="principle">
+            <h4>🔧 Patrones Estructurales</h4>
+            <p><strong>Propósito:</strong> Componer clases y objetos en estructuras más grandes.</p>
+            <p><strong>Ejemplo - Bridge:</strong> Separa una abstracción de su implementación para evitar la explosión combinatoria de subclases.</p>
+        </div>
+
+        <div class="principle">
+            <h4>⚡ Patrones de Comportamiento</h4>
+            <p><strong>Propósito:</strong> Definir formas de interacción entre objetos.</p>
+            <p><strong>Ejemplo - Observer:</strong> Permite notificar a múltiples objetos sobre cambios en otro objeto.</p>
+        </div>
+
+        <div class="warning">
+            <strong>⚠️ Cuándo NO usar patrones:</strong> No apliques patrones solo porque los conoces. Úsalos cuando realmente resuelvan un problema específico.
+        </div>
+
+        <h2>🏛️ Patrón Modelo-Vista-Controlador (MVC)</h2>
+
+        <div class="highlight">
+            <p>MVC es un patrón arquitectónico que separa la aplicación en tres componentes principales para mejorar la organización y mantenibilidad.</p>
+        </div>
+
+        <h3>Componentes del MVC</h3>
+
+        <div class="principle">
+            <h4>📊 Modelo (Model)</h4>
+            <ul>
+                <li>Gestiona los <strong>datos</strong> de la aplicación</li>
+                <li>Implementa la <strong>lógica de negocio</strong></li>
+                <li>No depende de la interfaz de usuario</li>
+            </ul>
+        </div>
+
+        <div class="principle">
+            <h4>👁️ Vista (View)</h4>
+            <ul>
+                <li>Presenta los datos al usuario</li>
+                <li>Maneja la <strong>interfaz de usuario</strong></li>
+                <li>React components, HTML, XML, etc.</li>
+            </ul>
+        </div>
+
+        <div class="principle">
+            <h4>🎮 Controlador (Controller)</h4>
+            <ul>
+                <li>Actúa como intermediario entre Modelo y Vista</li>
+                <li>Procesa <strong>eventos del usuario</strong></li>
+                <li>Contiene la <strong>lógica de aplicación</strong></li>
+            </ul>
+        </div>
+
+        <div class="example">
+            <h4>Ejemplo: Sitio Web de "Datos Curiosos"</h4>
+            <ul>
+                <li><strong>Modelo:</strong> Base de datos con los datos curiosos y clase `Fact`</li>
+                <li><strong>Vista:</strong> Página HTML con botón y área de texto para mostrar el dato</li>
+                <li><strong>Controlador:</strong> Lógica que recibe el clic, obtiene un dato aleatorio del modelo, y lo envía a la vista</li>
+            </ul>
+        </div>
+
+        <h3>Ventajas y Desventajas de MVC</h3>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ventajas ✅</th>
+                        <th>Desventajas ❌</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Separación clara de responsabilidades</td>
+                        <td>Puede agregar complejidad innecesaria</td>
+                    </tr>
+                    <tr>
+                        <td>Facilita el trabajo en equipo</td>
+                        <td>Requiere más planificación inicial</td>
+                    </tr>
+                    <tr>
+                        <td>Permite múltiples vistas (web, móvil)</td>
+                        <td>Puede ser excesivo para aplicaciones simples</td>
+                    </tr>
+                    <tr>
+                        <td>Mejor testabilidad</td>
+                        <td>Curva de aprendizaje más pronunciada</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>📐 UML - Lenguaje de Modelado Unificado</h2>
+        
+        <div class="highlight">
+            <p>UML es un lenguaje visual para especificar, construir y documentar sistemas de software. Permite comunicar diseños sin necesidad de ver cada línea de código.</p>
+        </div>
+
+        <h3>Diagramas de Clase UML</h3>
+        <p>Los diagramas de clase muestran:</p>
+        <ul>
+            <li><strong>Nombre de la clase</strong> (parte superior)</li>
+            <li><strong>Atributos</strong> (parte media)</li>
+            <li><strong>Métodos</strong> (parte inferior)</li>
+        </ul>
+
+        <div class="example">
+            <h4>Ejemplo de Notación UML:</h4>
+            <div style="font-family: monospace; background: #f5f5f5; padding: 15px; border-radius: 5px;">
+                ┌─────────────────┐<br>
+                │     Usuario     │<br>
+                ├─────────────────┤<br>
+                │ - nombre: String│<br>
+                │ - email: String │<br>
+                │ - edad: int     │<br>
+                ├─────────────────┤<br>
+                │ + login()       │<br>
+                │ + logout()      │<br>
+                │ + enviarEmail() │<br>
+                └─────────────────┘
+            </div>
+        </div>
+
+        <h2>🎯 Información Adicional para Tu Estudio</h2>
+
+        <h3>Principios Adicionales Importantes</h3>
+
+        <div class="principle">
+            <h4>🔄 Principio de Inversión de Control (IoC)</h4>
+            <p>Las dependencias deben ser inyectadas desde el exterior en lugar de ser creadas internamente por la clase.</p>
+        </div>
+
+        <div class="principle">
+            <h4>📦 Principio de Composición sobre Herencia</h4>
+            <p>Prefiere la composición (usar objetos de otras clases) sobre la herencia cuando sea posible.</p>
+        </div>
+
+        <h3>Métricas de Calidad del Código</h3>
+        <ul>
+            <li><strong>Complejidad Ciclomática:</strong> Mide la complejidad del código</li>
+            <li><strong>Cobertura de Pruebas:</strong> Porcentaje de código cubierto por tests</li>
+            <li><strong>Deuda Técnica:</strong> Costo de retrabajar código mal diseñado</li>
+            <li><strong>Acoplamiento:</strong> Grado de interdependencia entre módulos</li>
+            <li><strong>Cohesión:</strong> Grado de relación entre elementos de un módulo</li>
+        </ul>
+
+        <h3>Herramientas y Tecnologías Relacionadas</h3>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Herramientas</th>
+                        <th>Propósito</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Modelado UML</td>
+                        <td>PlantUML, Lucidchart, Draw.io</td>
+                        <td>Crear diagramas de arquitectura</td>
+                    </tr>
+                    <tr>
+                        <td>Análisis de Código</td>
+                        <td>SonarQube, ESLint, JSHint</td>
+                        <td>Detectar problemas de calidad</td>
+                    </tr>
+                    <tr>
+                        <td>Testing</td>
+                        <td>Jest, Mocha, JUnit</td>
+                        <td>Pruebas automatizadas</td>
+                    </tr>
+                    <tr>
+                        <td>Documentación</td>
+                        <td>JSDoc, Swagger, GitBook</td>
+                        <td>Documentar APIs y código</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="quiz">
+            <h3>🧠 Preguntas de Autoevaluación</h3>
+            <ol>
+                <li>¿Cuál es la diferencia entre YAGNI y KISS?</li>
+                <li>¿Por qué es importante el principio de Responsabilidad Única?</li>
+                <li>¿En qué situaciones sería apropiado usar el patrón MVC?</li>
+                <li>¿Cómo se relacionan los principios SOLID entre sí?</li>
+                <li>¿Cuándo NO deberías aplicar un patrón de diseño?</li>
+            </ol>
+        </div>
+
+        <div class="highlight">
+            <h3>🚀 Próximos Pasos en Tu Aprendizaje</h3>
+            <ol>
+                <li><strong>Practica:</strong> Implementa cada principio SOLID en un proyecto pequeño</li>
+                <li><strong>Estudia patrones:</strong> Aprende patrones como Factory, Strategy, y Command</li>
+                <li><strong>Arquitectura:</strong> Explora arquitecturas como Clean Architecture y Hexagonal</li>
+                <li><strong>Frameworks:</strong> Aplica estos conceptos en frameworks como React, Angular, o Vue</li>
+                <li><strong>Testing:</strong> Aprende sobre TDD (Test-Driven Development) y BDD</li>
+            </ol>
+        </div>
+
+
+        <h2>🌟 EJEMPLOS MODERNOS EN LA INDUSTRIA</h2>
+        
+        <div class="modern-examples">
+            <h4>🚀 Casos de Estudio: Principios de Diseño en Acción</h4>
+            
+            <div class="example-card">
+                <h5>Netflix - Microservicios y Single Responsibility</h5>
+                <p><strong>Problema:</strong> Monolito que se volvía cada vez más difícil de escalar y mantener.</p>
+                <p><strong>Solución:</strong> Dividieron su arquitectura en más de 700 microservicios, cada uno con una responsabilidad específica: recomendaciones, autenticación, pagos, streaming, etc.</p>
+                <p><strong>Resultado:</strong> 230M usuarios globales, escalabilidad masiva, y equipos independientes que pueden desplegar sin afectar otros servicios.</p>
+                <p><strong>Principios aplicados:</strong> SRP, Open-Closed, Dependency Inversion</p>
+            </div>
+            
+            <div class="example-card">
+                <h5>Spotify - Domain-Driven Design y SOLID</h5>
+                <p><strong>Problema:</strong> Coordinar desarrollo entre 100+ equipos con diferentes contextos de negocio.</p>
+                <p><strong>Solución:</strong> Arquitectura hexagonal con bounded contexts claros: Music Discovery, User Management, Playlist Management, Payment Processing.</p>
+                <p><strong>Resultado:</strong> 456M usuarios activos, despliegues independientes, y nuevas funcionalidades sin romper funcionalidad existente.</p>
+                <p><strong>Principios aplicados:</strong> Todos los SOLID, DDD, Clean Architecture</p>
+            </div>
+            
+            <div class="example-card">
+                <h5>Airbnb - Component-Based Architecture y DRY</h5>
+                <p><strong>Problema:</strong> Duplicación de UI components entre web, mobile, y aplicaciones internas.</p>
+                <p><strong>Solución:</strong> Design System Library (DSL) con componentes reutilizables y API unificada.</p>
+                <p><strong>Resultado:</strong> 70% reducción en tiempo de desarrollo de nuevas features, consistencia visual, y testing automatizado.</p>
+                <p><strong>Principios aplicados:</strong> DRY, Component Composition, Interface Segregation</p>
+            </div>
+            
+        </div>
+
+        <h2>🔮 TENDENCIAS EN SOFTWARE ARCHITECTURE 2025</h2>
+        
+        <div class="trends-2025">
+            <h4>🚀 Tendencias que Están Definiendo el Futuro</h4>
+            
+            <div class="trend-item">
+                <h5>🤖 AI-Driven Architecture</h5>
+                <p><strong>Concepto:</strong> Sistemas que se auto-optimizan usando machine learning.</p>
+                <p><strong>Aplicación:</strong> Auto-scaling basado en patrones de tráfico, code generation, y architectural decision making.</p>
+                <p><strong>Ejemplo:</strong> Google's AutoML optimiza arquitecturas de red neuronal automáticamente.</p>
+                <p><strong>Principios afectados:</strong> Adaptación inteligente de Open-Closed y DRY.</p>
+            </div>
+            
+            <div class="trend-item">
+                <h5>🌊 Event-Driven Architecture</h5>
+                <p><strong>Concepto:</strong> Sistemas reactivos basados en eventos en tiempo real.</p>
+                <p><strong>Aplicación:</strong> Kafka, AWS EventBridge, real-time analytics, y microservices communication.</p>
+                <p><strong>Beneficio:</strong> 50% reducción en latencia, mejor resilience, y scalability horizontal.</p>
+                <p><strong>Principios:</strong> Loose coupling, reactive programming, Observer pattern.</p>
+            </div>
+            
+            <div class="trend-item">
+                <h5>🔒 Zero Trust Architecture</h5>
+                <p><strong>Concepto:</strong> "Never trust, always verify" - seguridad en cada componente.</p>
+                <p><strong>Aplicación:</strong> Identity verification, encrypted communication, least privilege access.</p>
+                <p><strong>Impacto:</strong> 60% reducción en security breaches cuando se implementa correctamente.</p>
+                <p><strong>Principios:</strong> Dependency Inversion para security layers, Interface Segregation para access.</p>
+            </div>
+            
+            <div class="trend-item">
+                <h5>🌍 Edge Computing Integration</h5>
+                <p><strong>Concepto:</strong> Procesamiento cerca del usuario final para reducir latencia.</p>
+                <p><strong>Aplicación:</strong> CDNs inteligentes, IoT processing, real-time applications.</p>
+                <p><strong>Resultado:</strong> 80% reducción en latencia para aplicaciones críticas.</p>
+                <p><strong>Principios:</strong> Distributed responsibility, modular deployment.</p>
+            </div>
+            
+            <div class="trend-item">
+                <h5>♻️ Sustainable Software Design</h5>
+                <p><strong>Concepto:</strong> Green computing y optimización energética.</p>
+                <p><strong>Métricas:</strong> Carbon footprint, energy efficiency, resource optimization.</p>
+                <p><strong>Impacto:</strong> 30% reducción en costos de infraestructura, responsabilidad ambiental.</p>
+                <p><strong>Principios:</strong> Efficient algorithms, KISS principle, resource minimization.</p>
+            </div>
+        </div>
+
+        <h2>🛠️ HERRAMIENTAS AVANZADAS DEL ECOSISTEMA 2025</h2>
+        
+        <div class="advanced-tools">
+            <h4>⚡ Stack Tecnológico Completo para Software Design</h4>
+            
+            <div class="tool-category">
+                <h5>🏗️ Architecture & Design</h5>
+                <ul>
+                    <li><strong>Miro/FigJam:</strong> Collaborative architecture design</li>
+                    <li><strong>Lucidchart:</strong> Professional UML and system diagrams</li>
+                    <li><strong>PlantUML:</strong> Code-based diagram generation</li>
+                    <li><strong>C4 Model:</strong> Context, Containers, Components, Code documentation</li>
+                    <li><strong>Archimate:</strong> Enterprise architecture modeling</li>
+                </ul>
+            </div>
+            
+            <div class="tool-category">
+                <h5>🔍 Code Quality & Analysis</h5>
+                <ul>
+                    <li><strong>SonarQube:</strong> Static code analysis, technical debt tracking</li>
+                    <li><strong>CodeClimate:</strong> Automated code review, maintainability scores</li>
+                    <li><strong>ESLint/Prettier:</strong> JavaScript/TypeScript code standards</li>
+                    <li><strong>SpotBugs:</strong> Java static analysis</li>
+                    <li><strong>Pylint:</strong> Python code quality checker</li>
+                </ul>
+            </div>
+            
+            <div class="tool-category">
+                <h5>🧪 Testing & Quality Assurance</h5>
+                <ul>
+                    <li><strong>Jest/Vitest:</strong> Unit testing con coverage reports</li>
+                    <li><strong>Cypress/Playwright:</strong> End-to-end testing</li>
+                    <li><strong>Storybook:</strong> Component testing e documentation</li>
+                    <li><strong>Postman/Insomnia:</strong> API testing y documentation</li>
+                    <li><strong>K6:</strong> Performance y load testing</li>
+                </ul>
+            </div>
+            
+            <div class="tool-category">
+                <h5>📊 Monitoring & Observability</h5>
+                <ul>
+                    <li><strong>Datadog:</strong> Application performance monitoring</li>
+                    <li><strong>New Relic:</strong> Full-stack observability</li>
+                    <li><strong>Prometheus + Grafana:</strong> Metrics y alerting</li>
+                    <li><strong>Jaeger:</strong> Distributed tracing</li>
+                    <li><strong>ELK Stack:</strong> Logging y analysis</li>
+                </ul>
+            </div>
+            
+            <div class="tool-category">
+                <h5>🚀 DevOps & Deployment</h5>
+                <ul>
+                    <li><strong>Docker:</strong> Containerization y microservices</li>
+                    <li><strong>Kubernetes:</strong> Container orchestration</li>
+                    <li><strong>Terraform:</strong> Infrastructure as Code</li>
+                    <li><strong>GitHub Actions:</strong> CI/CD pipelines</li>
+                    <li><strong>ArgoCD:</strong> GitOps deployment</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>💪 EJERCICIOS PRÁCTICOS AVANZADOS</h2>
+        
+        <div class="practical-exercises">
+            <h4>🎯 Challenges para Dominar los Principios</h4>
+            
+            <div class="exercise-card">
+                <h5>🏗️ Ejercicio 1: Refactoring SOLID Challenge</h5>
+                <p><strong>Tiempo:</strong> 2-3 horas</p>
+                <p><strong>Descripción:</strong> Toma una clase "God Object" (que hace todo) y refactorízala aplicando todos los principios SOLID.</p>
+                <p><strong>Entregable:</strong> Antes/después del código, explicación de cada principio aplicado, tests unitarios.</p>
+                <p><strong>Ejemplo:</strong> Clase UserManager que maneja auth, profile, notifications, y database operations.</p>
+                <p><strong>Skills desarrollados:</strong> Refactoring, testing, architectural thinking.</p>
+            </div>
+            
+            <div class="exercise-card">
+                <h5>🎨 Ejercicio 2: Design Pattern Implementation</h5>
+                <p><strong>Tiempo:</strong> 1.5 horas</p>
+                <p><strong>Descripción:</strong> Implementa 3 design patterns (Factory, Observer, Strategy) en un mini-proyecto.</p>
+                <p><strong>Contexto:</strong> Sistema de notificaciones que soporta email, SMS, push, con diferentes strategies de delivery.</p>
+                <p><strong>Entregable:</strong> Código funcional, UML diagrams, documentation.</p>
+                <p><strong>Extra Challenge:</strong> Añade nuevos tipos de notificación sin modificar código existente.</p>
+            </div>
+            
+            <div class="exercise-card">
+                <h5>🧪 Ejercicio 3: TDD Implementation</h5>
+                <p><strong>Tiempo:</strong> 2 horas</p>
+                <p><strong>Descripción:</strong> Construye una Calculator class usando TDD (Test-Driven Development).</p>
+                <p><strong>Proceso:</strong> Red (test fails) → Green (make it pass) → Refactor (improve code).</p>
+                <p><strong>Features:</strong> Basic operations, memory functions, scientific operations, error handling.</p>
+                <p><strong>Entregable:</strong> 95%+ test coverage, clean code, refactoring log.</p>
+            </div>
+            
+            <div class="exercise-card">
+                <h5>🌐 Ejercicio 4: Microservices Architecture Design</h5>
+                <p><strong>Tiempo:</strong> 3-4 horas</p>
+                <p><strong>Descripción:</strong> Diseña arquitectura de microservices para un e-commerce.</p>
+                <p><strong>Servicios:</strong> User Management, Product Catalog, Cart, Orders, Payments, Notifications.</p>
+                <p><strong>Consideraciones:</strong> Data consistency, communication patterns, failure resilience.</p>
+                <p><strong>Entregable:</strong> Architecture diagram, API contracts, deployment strategy.</p>
+            </div>
+            
+            <div class="exercise-card">
+                <h5>📊 Ejercicio 5: Code Quality Analysis</h5>
+                <p><strong>Tiempo:</strong> 1 hora</p>
+                <p><strong>Descripción:</strong> Analiza un proyecto open source usando herramientas de quality metrics.</p>
+                <p><strong>Herramientas:</strong> SonarQube, CodeClimate, o similares.</p>
+                <p><strong>Análisis:</strong> Cyclomatic complexity, code smells, technical debt, security vulnerabilities.</p>
+                <p><strong>Entregable:</strong> Informe de análisis, plan de mejora priorizado, estimación de esfuerzo.</p>
+            </div>
+        </div>
+
+        <h2>📈 MÉTRICAS Y KPIS DE CÓDIGO</h2>
+        
+        <div class="metrics-section">
+            <h4>🎯 Métricas Críticas para Software Quality</h4>
+            
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-number">10</div>
+                    <h5>Complejidad Ciclomática</h5>
+                    <p>Máximo recomendado por función</p>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-number">80%</div>
+                    <h5>Test Coverage</h5>
+                    <p>Mínimo para código crítico</p>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-number">≤5</div>
+                    <h5>Coupling (Ca/Ce)</h5>
+                    <p>Acoplamiento aferente/eferente</p>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-number">7±2</div>
+                    <h5>Función Parameters</h5>
+                    <p>Máximo parámetros por función</p>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-number">≤50</div>
+                    <h5>Lines of Code</h5>
+                    <p>Por función (LOC)</p>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-number">≤15</div>
+                    <h5>Public Methods</h5>
+                    <p>Por clase (máximo)</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 25px; background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                <h5>📊 Technical Debt Calculation</h5>
+                <p><strong>Formula:</strong> Technical Debt = (Complexity × Duplication × Coverage Gap) / Team Velocity</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+                    <div>
+                        <strong>Low Risk:</strong>
+                        <ul style="margin: 5px 0; padding-left: 20px; font-size: 0.9rem;">
+                            <li>Complexity: 1-5</li>
+                            <li>Duplication: <3%</li>
+                            <li>Coverage: >80%</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>Medium Risk:</strong>
+                        <ul style="margin: 5px 0; padding-left: 20px; font-size: 0.9rem;">
+                            <li>Complexity: 6-10</li>
+                            <li>Duplication: 3-10%</li>
+                            <li>Coverage: 60-80%</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>High Risk:</strong>
+                        <ul style="margin: 5px 0; padding-left: 20px; font-size: 0.9rem;">
+                            <li>Complexity: >10</li>
+                            <li>Duplication: >10%</li>
+                            <li>Coverage: <60%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>🎯 MEJORES PRÁCTICAS CONSOLIDADAS</h2>
+        
+        <div class="best-practices">
+            <h4>🏆 Best Practices de la Industria</h4>
+            
+            <div class="practice-item">
+                <h5>🔍 Code Reviews Efectivos</h5>
+                <ul>
+                    <li><strong>Pull Request Size:</strong> Máximo 400 líneas de código</li>
+                    <li><strong>Review Time:</strong> Respuesta en <24 horas, review completo en <2 días</li>
+                    <li><strong>Checklist:</strong> Functionality, performance, security, maintainability</li>
+                    <li><strong>Automation:</strong> Linting, testing, y security scans automáticos</li>
+                </ul>
+            </div>
+            
+            <div class="practice-item">
+                <h5>📚 Documentation Standards</h5>
+                <ul>
+                    <li><strong>Code Comments:</strong> WHY, not WHAT (explica business logic)</li>
+                    <li><strong>API Documentation:</strong> OpenAPI/Swagger con ejemplos reales</li>
+                    <li><strong>Architecture Decision Records (ADRs):</strong> Documenta decisiones importantes</li>
+                    <li><strong>README:</strong> Setup en <5 minutos, clear contribution guidelines</li>
+                </ul>
+            </div>
+            
+            <div class="practice-item">
+                <h5>🚀 Deployment & Reliability</h5>
+                <ul>
+                    <li><strong>Blue-Green Deployments:</strong> Zero-downtime releases</li>
+                    <li><strong>Feature Flags:</strong> Progressive rollout, instant rollback capability</li>
+                    <li><strong>Monitoring:</strong> 99.9% uptime target, <200ms response time</li>
+                    <li><strong>Disaster Recovery:</strong> RTO <1 hour, RPO <15 minutes</li>
+                </ul>
+            </div>
+            
+            <div class="practice-item">
+                <h5>🔒 Security by Design</h5>
+                <ul>
+                    <li><strong>Shift-Left Security:</strong> Security testing en CI/CD pipeline</li>
+                    <li><strong>Least Privilege:</strong> Minimal access rights por defecto</li>
+                    <li><strong>Input Validation:</strong> Sanitización y validación en todos los endpoints</li>
+                    <li><strong>Dependency Scanning:</strong> Automated vulnerability detection</li>
+                </ul>
+            </div>
+            
+            <div class="practice-item">
+                <h5>📈 Performance Optimization</h5>
+                <ul>
+                    <li><strong>Database:</strong> Query optimization, indexing strategy, connection pooling</li>
+                    <li><strong>Caching:</strong> Multi-level caching (browser, CDN, application, database)</li>
+                    <li><strong>Async Processing:</strong> Background jobs para operaciones pesadas</li>
+                    <li><strong>Resource Management:</strong> Memory leaks prevention, CPU optimization</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>📊 QUALITY METRICS DASHBOARD</h2>
+        
+        <div class="code-quality-metrics">
+            <h4>🎛️ Métricas de Calidad en Tiempo Real</h4>
+            
+            <div class="quality-grid">
+                <div class="quality-item">
+                    <h5>🎯 Code Quality Score</h5>
+                    <div style="font-size: 1.8rem; color: #74b9ff; margin: 10px 0;">A</div>
+                    <p>Maintainability Index: 85+</p>
+                    <p>Technical Debt: <8 hours</p>
+                </div>
+                
+                <div class="quality-item">
+                    <h5>🧪 Test Health</h5>
+                    <div style="font-size: 1.8rem; color: #00b894; margin: 10px 0;">95%</div>
+                    <p>Coverage: Line + Branch</p>
+                    <p>Test Success Rate: 99.8%</p>
+                </div>
+                
+                <div class="quality-item">
+                    <h5>🔒 Security Score</h5>
+                    <div style="font-size: 1.8rem; color: #fdcb6e; margin: 10px 0;">8.7/10</div>
+                    <p>Vulnerabilities: 0 Critical</p>
+                    <p>OWASP Compliance: 100%</p>
+                </div>
+                
+                <div class="quality-item">
+                    <h5>⚡ Performance</h5>
+                    <div style="font-size: 1.8rem; color: #e17055; margin: 10px 0;">180ms</div>
+                    <p>Avg Response Time</p>
+                    <p>99.9% Uptime SLA</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 25px; background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                <h5>🏆 Team Productivity Metrics</h5>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 15px;">
+                    <div>
+                        <h6>🚀 Development Velocity</h6>
+                        <ul style="font-size: 0.9rem; margin: 0; padding-left: 20px;">
+                            <li>Story Points: 35/sprint</li>
+                            <li>Lead Time: 3.2 days</li>
+                            <li>Deployment Frequency: 2.1/day</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h6>🔧 Code Quality Trends</h6>
+                        <ul style="font-size: 0.9rem; margin: 0; padding-left: 20px;">
+                            <li>Technical Debt: ↓ 15%</li>
+                            <li>Code Smells: ↓ 23%</li>
+                            <li>Duplication: ↓ 8%</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h6>🛡️ Reliability Metrics</h6>
+                        <ul style="font-size: 0.9rem; margin: 0; padding-left: 20px;">
+                            <li>MTTR: 45 minutes</li>
+                            <li>MTBF: 720 hours</li>
+                            <li>Change Failure Rate: 2%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            <div style="text-align: center; margin-top: 40px; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+            <p style="font-style: italic; color: #666;">
+                "La arquitectura de software es como un buen chiste: si tienes que explicarla, probablemente no esté bien diseñada." 
+                <br><br>
+                <strong>¡Sigue practicando y construyendo software excepcional! 🎯</strong>
+            </p>
+        </div>
+</body>
+</html>
