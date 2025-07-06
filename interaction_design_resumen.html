@@ -578,188 +578,674 @@
     </div>
 
     <div class="section">
-        <h2>🧭 Navegación</h2>
-        <p>Define el camino del usuario para acceder a páginas y contenido en una interfaz.</p>
+        <h2>📋 Content Audit y Content Inventory: Guía Paso a Paso</h2>
+        <p>Procesos fundamentales para organizar y optimizar el contenido digital. Son la base para una arquitectura de información efectiva.</p>
         
+        <div class="highlight">
+            <strong>Diferencia Clave:</strong> El Content Inventory es "QUÉ tienes", mientras que el Content Audit es "QUÉ hacer con lo que tienes".
+        </div>
+
+        <h3>📊 Content Inventory: Catalogando Todo el Contenido</h3>
+        <div class="key-points">
+            <h4>¿Qué es un Content Inventory?</h4>
+            <p>Una lista exhaustiva y estructurada de todo el contenido digital existente en tu sitio web, aplicación o plataforma. Es como hacer un "censo" de tu contenido.</p>
+        </div>
+
+        <div class="case-study-ixd">
+            <h4>🗂️ Proceso de Content Inventory</h4>
+            
+            <h5><strong>Paso 1: Preparación y Herramientas</strong></h5>
+            <ul>
+                <li><strong>Herramientas Recomendadas:</strong> Excel/Google Sheets, Screaming Frog, Content Audit Tool, GatherContent</li>
+                <li><strong>Equipo Necesario:</strong> Content strategist, UX researcher, desarrollador (para acceso a CMS)</li>
+                <li><strong>Tiempo Estimado:</strong> 1-4 semanas dependiendo del tamaño del sitio</li>
+            </ul>
+
+            <h5><strong>Paso 2: Definir Alcance y Criterios</strong></h5>
+            <ul>
+                <li>¿Todo el sitio o secciones específicas?</li>
+                <li>¿Incluir archivos descargables (PDFs, videos)?</li>
+                <li>¿Contenido en múltiples idiomas?</li>
+                <li>¿Contenido generado por usuarios?</li>
+            </ul>
+
+            <h5><strong>Paso 3: Crear la Estructura de Datos</strong></h5>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Campo</th>
+                        <th>Descripción</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>URL</strong></td>
+                        <td>Dirección completa de la página</td>
+                        <td>https://ejemplo.com/productos/zapatos</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Título de Página</strong></td>
+                        <td>H1 o title tag</td>
+                        <td>"Zapatos Deportivos - Colección 2025"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tipo de Contenido</strong></td>
+                        <td>Categoría funcional</td>
+                        <td>Página de producto, Blog post, Landing page</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Propietario</strong></td>
+                        <td>Responsable del contenido</td>
+                        <td>Marketing, Ventas, Soporte</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fecha de Creación</strong></td>
+                        <td>Cuándo se publicó</td>
+                        <td>15/03/2024</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Última Actualización</strong></td>
+                        <td>Fecha de modificación</td>
+                        <td>02/11/2024</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Formato</strong></td>
+                        <td>Tipo de archivo/media</td>
+                        <td>HTML, PDF, Video, Imagen</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tráfico/Analytics</strong></td>
+                        <td>Datos de rendimiento</td>
+                        <td>1,250 views/mes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tools-ixd-grid">
+            <div class="tool-ixd-card">
+                <h5>🔍 Screaming Frog</h5>
+                <p><strong>Función:</strong> Crawling automático del sitio<br>
+                <strong>Ventaja:</strong> Extrae títulos, meta descriptions, códigos de estado<br>
+                <strong>Limitación:</strong> Máximo 500 URLs en versión gratuita</p>
+            </div>
+            <div class="tool-ixd-card">
+                <h5>📊 Google Analytics</h5>
+                <p><strong>Función:</strong> Datos de tráfico y comportamiento<br>
+                <strong>Ventaja:</strong> Métricas de engagement y conversión<br>
+                <strong>Uso:</strong> Identificar contenido de alto/bajo rendimiento</p>
+            </div>
+            <div class="tool-ixd-card">
+                <h5>🗂️ GatherContent</h5>
+                <p><strong>Función:</strong> Plataforma especializada en content inventory<br>
+                <strong>Ventaja:</strong> Colaboración en tiempo real<br>
+                <strong>Incluye:</strong> Templates predefinidos y workflows</p>
+            </div>
+            <div class="tool-ixd-card">
+                <h5>📋 Excel/Google Sheets</h5>
+                <p><strong>Función:</strong> Organización manual de datos<br>
+                <strong>Ventaja:</strong> Control total y personalización<br>
+                <strong>Ideal para:</strong> Sitios pequeños o análisis específicos</p>
+            </div>
+        </div>
+
+        <h3>🔍 Content Audit: Evaluando y Optimizando</h3>
+        <div class="key-points">
+            <h4>¿Qué es un Content Audit?</h4>
+            <p>Proceso de evaluación sistemática del contenido inventariado para determinar su calidad, relevancia, precisión y alineación con objetivos de negocio.</p>
+        </div>
+
+        <div class="case-study-ixd">
+            <h4>⚖️ Proceso de Content Audit</h4>
+            
+            <h5><strong>Paso 1: Definir Criterios de Evaluación</strong></h5>
+            <div class="dimensions-grid">
+                <div class="dimension-card">
+                    <h5><span class="icon">🎯</span>Relevancia</h5>
+                    <p>¿El contenido sigue siendo útil para los usuarios actuales?</p>
+                </div>
+                <div class="dimension-card">
+                    <h5><span class="icon">✅</span>Precisión</h5>
+                    <p>¿La información es correcta y actualizada?</p>
+                </div>
+                <div class="dimension-card">
+                    <h5><span class="icon">🎨</span>Calidad</h5>
+                    <p>¿El contenido está bien escrito y es profesional?</p>
+                </div>
+                <div class="dimension-card">
+                    <h5><span class="icon">📈</span>Performance</h5>
+                    <p>¿Cumple objetivos de tráfico y conversión?</p>
+                </div>
+                <div class="dimension-card">
+                    <h5><span class="icon">♿</span>Accesibilidad</h5>
+                    <p>¿Es accesible para todos los usuarios?</p>
+                </div>
+                <div class="dimension-card">
+                    <h5><span class="icon">📱</span>Mobile-Friendly</h5>
+                    <p>¿Funciona bien en dispositivos móviles?</p>
+                </div>
+            </div>
+
+            <h5><strong>Paso 2: Sistema de Evaluación</strong></h5>
+            <div class="highlight">
+                <h4>📊 Escala de ROT (Redundant, Outdated, Trivial)</h4>
+                <ul>
+                    <li><strong>Keep (Mantener):</strong> Contenido valioso que funciona bien</li>
+                    <li><strong>Revise (Revisar):</strong> Contenido con potencial que necesita mejoras</li>
+                    <li><strong>Remove (Eliminar):</strong> Contenido redundante, obsoleto o trivial</li>
+                    <li><strong>Redirect (Redirigir):</strong> URLs con valor SEO pero contenido obsoleto</li>
+                </ul>
+            </div>
+
+            <h5><strong>Paso 3: Evaluación Detallada por Categorías</strong></h5>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Criterio</th>
+                        <th>Preguntas Clave</th>
+                        <th>Métrica</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Tráfico</strong></td>
+                        <td>¿Recibe visitas consistentes?</td>
+                        <td>Pageviews, tiempo en página</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SEO</strong></td>
+                        <td>¿Está bien optimizado?</td>
+                        <td>Ranking, keywords, backlinks</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Conversión</strong></td>
+                        <td>¿Cumple objetivos de negocio?</td>
+                        <td>Conversion rate, goal completions</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Usuario</strong></td>
+                        <td>¿Satisface necesidades del usuario?</td>
+                        <td>Bounce rate, scroll depth</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Técnico</strong></td>
+                        <td>¿Funciona correctamente?</td>
+                        <td>Load time, mobile usability</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="modern-interaction">
+            <h4>🎯 Ejemplo Práctico: E-commerce Audit</h4>
+            
+            <h5><strong>Situación:</strong> Tienda online con 2,500 páginas de producto</h5>
+            
+            <h5><strong>Content Inventory Findings:</strong></h5>
+            <ul>
+                <li>847 páginas con descripciones de menos de 50 palabras</li>
+                <li>312 productos sin imágenes de alta calidad</li>
+                <li>156 páginas con información de stock desactualizada</li>
+                <li>89 productos descontinuados sin redirección</li>
+            </ul>
+
+            <h5><strong>Content Audit Recommendations:</strong></h5>
+            <ul>
+                <li><strong>Keep:</strong> 1,200 páginas con alto tráfico y conversión</li>
+                <li><strong>Revise:</strong> 847 páginas - mejorar descripciones y SEO</li>
+                <li><strong>Remove:</strong> 89 productos descontinuados</li>
+                <li><strong>Redirect:</strong> URLs con autoridad de dominio a productos similares</li>
+            </ul>
+
+            <h5><strong>Resultados Esperados:</strong></h5>
+            <div class="metrics-ixd-grid">
+                <div class="metric-ixd-card">
+                    <span class="metric-ixd-number">25%</span>
+                    <p>Mejora en tráfico orgánico</p>
+                </div>
+                <div class="metric-ixd-card">
+                    <span class="metric-ixd-number">40%</span>
+                    <p>Reducción en bounce rate</p>
+                </div>
+                <div class="metric-ixd-card">
+                    <span class="metric-ixd-number">15%</span>
+                    <p>Aumento en conversiones</p>
+                </div>
+                <div class="metric-ixd-card">
+                    <span class="metric-ixd-number">-30%</span>
+                    <p>Tiempo de mantenimiento</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exercise-interaction">
+            <h4>🏋️ Ejercicio Práctico: Mini Content Audit</h4>
+            
+            <h5><strong>Objetivo:</strong> Realizar un content audit de una sección específica</h5>
+            
+            <h5><strong>Pasos:</strong></h5>
+            <ol>
+                <li><strong>Selecciona:</strong> Una sección del sitio (ej: blog, FAQ, productos)</li>
+                <li><strong>Inventario:</strong> Lista 20-30 piezas de contenido con URL, título, fecha</li>
+                <li><strong>Analiza:</strong> Usa Google Analytics para obtener métricas básicas</li>
+                <li><strong>Evalúa:</strong> Asigna cada pieza a Keep/Revise/Remove/Redirect</li>
+                <li><strong>Prioriza:</strong> Ordena por impacto vs esfuerzo requerido</li>
+                <li><strong>Planifica:</strong> Crea timeline de 30 días para implementar cambios</li>
+            </ol>
+
+            <h5><strong>Entregables:</strong></h5>
+            <ul>
+                <li>Spreadsheet con inventory completo</li>
+                <li>Recomendaciones categorizadas</li>
+                <li>Plan de acción con fechas límite</li>
+                <li>Métricas baseline para medir progreso</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <h4>⚠️ Errores Comunes en Content Audits</h4>
+            <ul>
+                <li><strong>Scope Creep:</strong> Intentar auditar todo a la vez sin priorización</li>
+                <li><strong>Métricas Vanity:</strong> Enfocarse solo en pageviews, ignorar calidad</li>
+                <li><strong>Decisiones Emocionales:</strong> Mantener contenido por apego personal</li>
+                <li><strong>Falta de Stakeholder Buy-in:</strong> No involucrar a propietarios de contenido</li>
+                <li><strong>No Documentar Criterios:</strong> Decisiones inconsistentes por falta de estándares</li>
+                <li><strong>Ignorar SEO Impact:</strong> Eliminar páginas sin considerar redireccionamientos</li>
+            </ul>
+        </div>
+
+        <div class="additional-info">
+            <h3>🔄 Mantenimiento Continuo</h3>
+            
+            <h4>📅 Cronograma de Auditorías</h4>
+            <ul>
+                <li><strong>Quarterly (Trimestral):</strong> Revisión de métricas y contenido de alto tráfico</li>
+                <li><strong>Bi-annual (Semestral):</strong> Audit completo de secciones principales</li>
+                <li><strong>Annual (Anual):</strong> Revisión estratégica completa del sitio</li>
+                <li><strong>Ad-hoc:</strong> Antes de rediseños o cambios estratégicos importantes</li>
+            </ul>
+
+            <h4>🛠️ Automatización y Herramientas</h4>
+            <ul>
+                <li><strong>Google Data Studio:</strong> Dashboards automáticos de performance</li>
+                <li><strong>Content King:</strong> Monitoreo continuo de cambios</li>
+                <li><strong>Botify:</strong> SEO crawling y análisis técnico avanzado</li>
+                <li><strong>Custom Scripts:</strong> Automatización de tareas repetitivas</li>
+            </ul>
+
+            <h4>📊 KPIs para Content Strategy</h4>
+            <div class="metrics-ixd-grid">
+                <div class="metric-ixd-card">
+                    <span class="metric-ixd-number">85%</span>
+                    <p>Contenido actualizado en últimos 12 meses</p>
+                </div>
+                <div class="metric-ixd-card">
+                    <span class="metric-ixd-number">3:1</span>
+                    <p>Ratio Keep:Remove en audits</p>
+                </div>
+                <div class="metric-ixd-card">
+                    <span class="metric-ixd-number">↑20%</span>
+                    <p>Mejora promedio en engagement post-audit</p>
+                </div>
+                <div class="metric-ixd-card">
+                    <span class="metric-ixd-number">6-8</span>
+                    <p>Semanas típicas para audit completo</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🗺️ Site Map: Arquitectura Visual de tu Sitio Web</h2>
+        <p>Un Site Map es un diagrama jerárquico que muestra la estructura y organización de todas las páginas de un sitio web. Es la representación visual de la arquitectura de información.</p>
+        
+        <div class="highlight">
+            <strong>Diferencia Clave:</strong> Un Site Map es para el EQUIPO (muestra estructura completa), mientras que la Navegación es para el USUARIO (muestra solo rutas principales).
+        </div>
+
+        <h3>🎯 ¿Para Qué Sirve un Site Map?</h3>
+        <div class="key-points">
+            <h4>Beneficios Clave</h4>
+            <ul>
+                <li><strong>Claridad Estructural:</strong> Visualiza la jerarquía completa del contenido</li>
+                <li><strong>Comunicación del Equipo:</strong> Lenguaje común entre diseñadores, desarrolladores y stakeholders</li>
+                <li><strong>Planificación de Desarrollo:</strong> Roadmap técnico para la implementación</li>
+                <li><strong>SEO Strategy:</strong> Base para optimización de motores de búsqueda</li>
+                <li><strong>User Journey Mapping:</strong> Identifica rutas de navegación del usuario</li>
+            </ul>
+        </div>
+
+        <div class="case-study-ixd">
+            <h4>📋 Proceso Paso a Paso para Crear un Site Map</h4>
+            
+            <h5><strong>Paso 1: Investigación y Preparación (1-2 días)</strong></h5>
+            <ul>
+                <li><strong>Revisar Content Inventory:</strong> Usar los datos del content audit previo</li>
+                <li><strong>Analizar Competidores:</strong> Estudiar site maps de sitios similares</li>
+                <li><strong>Definir Objetivos:</strong> ¿Qué debe lograr cada sección?</li>
+                <li><strong>Identificar Audiencias:</strong> Diferentes tipos de usuarios y sus necesidades</li>
+                <li><strong>Recopilar Requerimientos:</strong> Funcionalidades técnicas y de negocio</li>
+            </ul>
+
+            <h5><strong>Paso 2: Card Sorting (Opcional pero Recomendado)</strong></h5>
+            <div class="dimensions-grid">
+                <div class="dimension-card">
+                    <h5><span class="icon">📋</span>Card Sorting Abierto</h5>
+                    <p>Los usuarios agrupan contenido libremente y crean sus propias categorías.</p>
+                </div>
+                <div class="dimension-card">
+                    <h5><span class="icon">🗂️</span>Card Sorting Cerrado</h5>
+                    <p>Los usuarios organizan contenido en categorías predefinidas.</p>
+                </div>
+                <div class="dimension-card">
+                    <h5><span class="icon">🔄</span>Card Sorting Híbrido</h5>
+                    <p>Combinación: categorías predefinidas + opción de crear nuevas.</p>
+                </div>
+                <div class="dimension-card">
+                    <h5><span class="icon">🔍</span>Análisis de Resultados</h5>
+                    <p>Identificar patrones comunes en la organización mental de usuarios.</p>
+                </div>
+            </div>
+
+            <h5><strong>Paso 3: Definir Jerarquía y Estructura</strong></h5>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Nivel</th>
+                        <th>Descripción</th>
+                        <th>Ejemplo</th>
+                        <th>Consideraciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Nivel 1 - Home</strong></td>
+                        <td>Página principal del sitio</td>
+                        <td>index.html</td>
+                        <td>Único punto de entrada principal</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nivel 2 - Secciones</strong></td>
+                        <td>Categorías principales</td>
+                        <td>Productos, Servicios, Nosotros, Contacto</td>
+                        <td>Máximo 7±2 secciones (Regla de Miller)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nivel 3 - Subsecciones</strong></td>
+                        <td>Subcategorías específicas</td>
+                        <td>Productos > Zapatos > Deportivos</td>
+                        <td>Organización lógica y temática</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nivel 4+ - Páginas</strong></td>
+                        <td>Contenido específico</td>
+                        <td>Producto individual, Blog post</td>
+                        <td>Evitar más de 3-4 niveles de profundidad</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tools-ixd-grid">
+            <div class="tool-ixd-card">
+                <h5>🎨 Figma/Miro</h5>
+                <p><strong>Función:</strong> Diseño colaborativo de site maps<br>
+                <strong>Ventaja:</strong> Trabajo en tiempo real con el equipo<br>
+                <strong>Incluye:</strong> Templates predefinidos y componentes</p>
+            </div>
+            <div class="tool-ixd-card">
+                <h5>📊 Lucidchart</h5>
+                <p><strong>Función:</strong> Diagramas profesionales y flowcharts<br>
+                <strong>Ventaja:</strong> Integración con herramientas empresariales<br>
+                <strong>Especialidad:</strong> Diagramas técnicos detallados</p>
+            </div>
+            <div class="tool-ixd-card">
+                <h5>🗂️ GlooMaps</h5>
+                <p><strong>Función:</strong> Herramienta especializada en site maps<br>
+                <strong>Ventaja:</strong> Interfaz simple y enfocada<br>
+                <strong>Limitación:</strong> Menos opciones de personalización</p>
+            </div>
+            <div class="tool-ixd-card">
+                <h5>✏️ Papel y Post-its</h5>
+                <p><strong>Función:</strong> Prototipado rápido analógico<br>
+                <strong>Ventaja:</strong> Flexibilidad total para reorganizar<br>
+                <strong>Ideal para:</strong> Workshops colaborativos iniciales</p>
+            </div>
+        </div>
+
+        <h3>🏗️ Tipos de Site Maps</h3>
         <div class="navigation-types">
             <div class="nav-type">
-                <h5>Barra Horizontal</h5>
-                <p>Tipo más común, lista las páginas principales del sitio</p>
+                <h5>📊 Site Map Jerárquico</h5>
+                <p>Estructura en árbol tradicional. Ideal para sitios con categorías claras y contenido bien definido.</p>
             </div>
             <div class="nav-type">
-                <h5>Menús Desplegables</h5>
-                <p>Para IA compleja o sitios con mucho contenido</p>
+                <h5>🕸️ Site Map Radial</h5>
+                <p>Estructura circular con home en el centro. Útil para sitios con múltiples puntos de entrada.</p>
             </div>
             <div class="nav-type">
-                <h5>Menú Hamburguesa</h5>
-                <p>Icono de tres líneas que abre menú oculto, ahorra espacio</p>
+                <h5>📱 Site Map Responsive</h5>
+                <p>Considera diferentes experiencias mobile/desktop. Incluye navegación adaptativa.</p>
             </div>
             <div class="nav-type">
-                <h5>Sidebar</h5>
-                <p>Navegación lateral, puede ser primaria o de apoyo</p>
-            </div>
-            <div class="nav-type">
-                <h5>Búsqueda</h5>
-                <p>Navegación directa a contenido específico</p>
+                <h5>👤 Site Map por Usuario</h5>
+                <p>Diferentes estructuras según tipo de usuario. Personalización basada en roles.</p>
             </div>
         </div>
 
-        <div class="key-points">
-            <h4>Mejores Prácticas de Navegación</h4>
+        <div class="modern-interaction">
+            <h4>🎯 Ejemplo Práctico: E-commerce Fashion Site Map</h4>
+            
+            <h5><strong>Contexto:</strong> Tienda online de ropa con 500+ productos</h5>
+            
+            <h5><strong>Estructura Jerárquica:</strong></h5>
+            <div class="case-study-ixd">
+                <strong>Nivel 1:</strong> Home<br>
+                <strong>Nivel 2:</strong>
+                <ul>
+                    <li>👕 Productos
+                        <ul>
+                            <li>👨 Hombre → Camisas, Pantalones, Zapatos, Accesorios</li>
+                            <li>👩 Mujer → Blusas, Vestidos, Pantalones, Zapatos, Accesorios</li>
+                            <li>👶 Niños → Ropa, Zapatos, Juguetes</li>
+                            <li>🆕 Novedades → Temporada Actual, Ofertas</li>
+                        </ul>
+                    </li>
+                    <li>ℹ️ Información
+                        <ul>
+                            <li>🏢 Nosotros → Historia, Equipo, Valores</li>
+                            <li>📞 Contacto → Formulario, Ubicación, Horarios</li>
+                            <li>❓ FAQ → Envíos, Devoluciones, Tallas</li>
+                        </ul>
+                    </li>
+                    <li>👤 Mi Cuenta
+                        <ul>
+                            <li>📝 Registro/Login</li>
+                            <li>📦 Mis Pedidos</li>
+                            <li>❤️ Lista de Deseos</li>
+                            <li>⚙️ Configuración</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <h5><strong>Consideraciones Especiales:</strong></h5>
             <ul>
-                <li>Hacer la navegación fácilmente accesible y en lugar esperado</li>
-                <li>Separar visualmente la navegación del contenido</li>
-                <li>Usar etiquetas descriptivas</li>
-                <li>No ocultar puntos de entrada importantes a páginas de alto tráfico</li>
+                <li><strong>Cross-selling:</strong> "También te puede gustar" en páginas de producto</li>
+                <li><strong>Filtros Dinámicos:</strong> Por talla, color, precio, marca</li>
+                <li><strong>Búsqueda Avanzada:</strong> Autocompletado y sugerencias</li>
+                <li><strong>Mobile Navigation:</strong> Menú hamburguesa colapsible</li>
             </ul>
         </div>
-    </div>
 
-    <div class="section">
-        <h2>🔧 Patrones de Diseño</h2>
-        <p>Soluciones estandarizadas a problemas comunes de diseño. Son más flexibles que componentes y pueden incluir módulos, flujos o comportamientos específicos.</p>
-        
-        <h3>📈 Indicadores de Progreso</h3>
-        <p>Elementos que ayudan a los usuarios a entender qué tan avanzados están en un proceso. Según Richard Larson: <em>"mantén entretenidos a los clientes mientras esperan y maneja sus expectativas"</em>.</p>
-        
-        <div class="patterns-showcase">
-            <div class="pattern-item">
-                <h5>Barra de Progreso</h5>
-                <p>Muestra porcentaje completado</p>
-            </div>
-            <div class="pattern-item">
-                <h5>Spinner</h5>
-                <p>Indica proceso en curso</p>
-            </div>
-            <div class="pattern-item">
-                <h5>Steppers</h5>
-                <p>Muestra pasos en secuencia</p>
-            </div>
-        </div>
-
-        <h3>🗓️ Date Picker</h3>
-        <p>Patrón común que permite a los usuarios seleccionar fácilmente una fecha específica o rango de fechas.</p>
-
-        <h3>🔍 Resultados de Búsqueda</h3>
-        <p>Lista de resultados mostrados después de completar y enviar un formulario de búsqueda.</p>
-        
-        <div class="key-points">
-            <h4>Consideraciones para Resultados de Búsqueda</h4>
+        <div class="exercise-interaction">
+            <h4>🏋️ Workshop: Creando tu Primer Site Map</h4>
+            
+            <h5><strong>Duración:</strong> 2-3 horas</h5>
+            
+            <h5><strong>Materiales Necesarios:</strong></h5>
             <ul>
-                <li>¿Qué información mostrar para cada resultado?</li>
-                <li>¿En qué orden mostrar los resultados por defecto?</li>
-                <li>¿Qué filtros deberían estar disponibles?</li>
-                <li>¿Cuál es el siguiente paso deseado después de la búsqueda?</li>
-                <li>¿Cómo navegarán los usuarios a través de los resultados?</li>
+                <li>Post-its de diferentes colores</li>
+                <li>Marcadores</li>
+                <li>Pizarra o papel grande</li>
+                <li>Content inventory previo</li>
+            </ul>
+
+            <h5><strong>Actividad Paso a Paso:</strong></h5>
+            <ol>
+                <li><strong>Brainstorming (15 min):</strong> Listar todas las páginas necesarias en post-its</li>
+                <li><strong>Agrupación (20 min):</strong> Organizar post-its en categorías lógicas</li>
+                <li><strong>Jerarquización (25 min):</strong> Definir niveles y relaciones parent-child</li>
+                <li><strong>Validación (15 min):</strong> Revisar que cada página tenga propósito claro</li>
+                <li><strong>Refinamiento (30 min):</strong> Ajustar estructura basada en feedback</li>
+                <li><strong>Digitalización (45 min):</strong> Recrear en herramienta digital</li>
+            </ol>
+
+            <h5><strong>Entregables:</strong></h5>
+            <ul>
+                <li>Site map visual completo</li>
+                <li>Descripción de cada sección principal</li>
+                <li>Justificación de decisiones de arquitectura</li>
+                <li>Plan de navegación mobile vs desktop</li>
             </ul>
         </div>
-    </div>
 
-    <div class="section">
-        <h2>⚠️ Dark Patterns (Patrones Oscuros)</h2>
-        
-        <div class="warning-box">
-            <h4>¡EVITAR SIEMPRE!</h4>
-            <p>Son "trucos usados en sitios web y apps que te hacen hacer cosas que no querías hacer, como comprar o registrarte en algo" - Harry Brignull, especialista UX.</p>
-        </div>
-
+        <h3>✅ Checklist de Validación del Site Map</h3>
         <div class="heuristics-grid">
             <div class="heuristic-card">
-                <h5>Sneak into Basket</h5>
-                <p>El sitio agrega elementos adicionales a tu carrito durante el proceso de compra</p>
+                <h5>🧠 Modelo Mental del Usuario</h5>
+                <p>¿La estructura refleja cómo los usuarios piensan sobre el contenido?</p>
             </div>
             <div class="heuristic-card">
-                <h5>Confirmshaming</h5>
-                <p>Hacer sentir culpable al usuario para que acepte algo, mediante opciones que avergüenzan</p>
+                <h5>🎯 Objetivos de Negocio</h5>
+                <p>¿Cada sección apoya las metas comerciales del sitio?</p>
             </div>
             <div class="heuristic-card">
-                <h5>Misdirection</h5>
-                <p>El diseño enfoca tu atención en una cosa para distraerte de otra</p>
+                <h5>📏 Regla de los 3 Clics</h5>
+                <p>¿Cualquier página importante es alcanzable en máximo 3 clics?</p>
             </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>🎨 Sistemas de Diseño</h2>
-        <p>Repositorios de componentes y patrones reutilizables que aseguran consistencia en todo el output de diseño de un equipo u organización.</p>
-        
-        <div class="patterns-showcase">
-            <div class="pattern-item">
-                <h5>Style Guide</h5>
-                <p>Enfocado en diseño visual y branding</p>
+            <div class="heuristic-card">
+                <h5>🔍 Findabilidad</h5>
+                <p>¿Los usuarios pueden encontrar contenido usando diferentes estrategias?</p>
             </div>
-            <div class="pattern-item">
-                <h5>Component Library</h5>
-                <p>Repositorio de componentes de diseño reutilizables</p>
+            <div class="heuristic-card">
+                <h5>📱 Responsive Considerations</h5>
+                <p>¿La estructura funciona bien en dispositivos móviles?</p>
             </div>
-            <div class="pattern-item">
-                <h5>Pattern Library</h5>
-                <p>Repositorio de patrones que se enfocan en layouts y estructura</p>
+            <div class="heuristic-card">
+                <h5>🚀 Escalabilidad</h5>
+                <p>¿La estructura puede crecer sin necesidad de reestructuración mayor?</p>
             </div>
         </div>
 
-        <div class="key-points">
-            <h4>Beneficios de los Sistemas de Diseño</h4>
+        <div class="warning-box">
+            <h4>⚠️ Errores Comunes en Site Maps</h4>
             <ul>
-                <li>Permiten diseñar más rápidamente a escala</li>
-                <li>Ayudan en la incorporación de nuevos miembros del equipo</li>
-                <li>Aseguran consistencia en todos los productos</li>
-                <li>Facilitan el mantenimiento y actualización</li>
+                <li><strong>Demasiada Profundidad:</strong> Más de 4 niveles dificultan la navegación</li>
+                <li><strong>Categorías Ambiguas:</strong> Nombres de secciones que se superponen o confunden</li>
+                <li><strong>Órfanas:</strong> Páginas sin rutas claras de acceso desde home</li>
+                <li><strong>Sobrecarga del Nivel 2:</strong> Más de 7-9 secciones principales</li>
+                <li><strong>Ignorar Mobile:</strong> No considerar limitaciones de pantallas pequeñas</li>
+                <li><strong>Enfoque Interno:</strong> Organizar por departamentos en lugar de necesidades del usuario</li>
+                <li><strong>Falta de Cross-linking:</strong> No considerar navegación lateral entre secciones</li>
+            </ul>
+        </div>
+
+        <h3>🔬 Testing y Validación del Site Map</h3>
+        <div class="case-study-ixd">
+            <h4>🧪 Métodos de Validación</h4>
+            
+            <h5><strong>Tree Testing</strong></h5>
+            <ul>
+                <li><strong>Qué es:</strong> Usuarios navegan por estructura sin diseño visual</li>
+                <li><strong>Herramientas:</strong> Treejack, OptimalSort, UsabilityHub</li>
+                <li><strong>Métricas:</strong> Success rate, tiempo de tarea, clics hasta destino</li>
+                <li><strong>Cuándo usar:</strong> Antes de diseñar wireframes o prototipos</li>
+            </ul>
+
+            <h5><strong>First Click Testing</strong></h5>
+            <ul>
+                <li><strong>Qué es:</strong> Analiza el primer clic de usuarios en tareas específicas</li>
+                <li><strong>Principio:</strong> Si el primer clic es correcto, la tarea tiende a completarse exitosamente</li>
+                <li><strong>Insight clave:</strong> Revela problemas en la arquitectura de información</li>
+            </ul>
+
+            <h5><strong>Card Sorting Validation</strong></h5>
+            <ul>
+                <li><strong>Iterativo:</strong> Repetir card sorting después de cambios en la estructura</li>
+                <li><strong>Comparativo:</strong> Contrastar resultados antes y después de modificaciones</li>
+                <li><strong>Consensus:</strong> Buscar acuerdo del 70%+ en agrupaciones principales</li>
+            </ul>
+        </div>
+
+        <div class="additional-info">
+            <h3>📊 Site Map Analytics y Optimización</h3>
+            
+            <h4>🔍 Métricas de Rendimiento Post-Launch</h4>
+            <div class="metrics-ixd-grid">
+                <div class="metric-ixd-card">
+                    <span class="metric-ixd-number">85%</span>
+                    <p>Success rate en tree testing</p>
+                </div>
+                <div class="metric-ixd-card">
+                    <span class="metric-ixd-number">≤3</span>
+                    <p>Clics promedio a contenido importante</p>
+                </div>
+                <div class="metric-ixd-card">
+                    <span class="metric-ixd-number">70%</span>
+                    <p>Usuarios que completan tareas principales</p>
+                </div>
+                <div class="metric-ixd-card">
+                    <span class="metric-ixd-number">&lt;30s</span>
+                    <p>Tiempo promedio para encontrar información</p>
+                </div>
+            </div>
+
+            <h4>🔄 Iteración Continua</h4>
+            <ul>
+                <li><strong>Análisis de Heat Maps:</strong> Identificar secciones más/menos visitadas</li>
+                <li><strong>User Flow Analysis:</strong> Rutas reales vs rutas planificadas</li>
+                <li><strong>Search Query Analysis:</strong> Qué buscan los usuarios cuando no encuentran contenido</li>
+                <li><strong>Exit Page Analysis:</strong> Dónde abandonan los usuarios el sitio</li>
+                <li><strong>Mobile vs Desktop:</strong> Diferencias en patrones de navegación</li>
+            </ul>
+
+            <h4>🛠️ Herramientas de Monitoreo</h4>
+            <ul>
+                <li><strong>Google Analytics:</strong> Behavior Flow, Site Content analysis</li>
+                <li><strong>Hotjar/Crazy Egg:</strong> Heat maps y recordings de sesiones</li>
+                <li><strong>Microsoft Clarity:</strong> Heat maps y analytics gratuitos</li>
+                <li><strong>Maze:</strong> Testing continuo de navegación y findability</li>
+            </ul>
+        </div>
+
+        <div class="trend-interaction">
+            <h4>🚀 Tendencias Actuales en Site Map Design</h4>
+            
+            <h5><strong>IA-Driven Architecture</strong></h5>
+            <ul>
+                <li>Algoritmos que sugieren estructura óptima basada en content audit</li>
+                <li>Personalización automática de navegación por tipo de usuario</li>
+                <li>Predicción de rutas de navegación más efectivas</li>
+            </ul>
+
+            <h5><strong>Faceted Navigation</strong></h5>
+            <ul>
+                <li>Múltiples formas de clasificar el mismo contenido</li>
+                <li>Filtros dinámicos que se adaptan al contexto</li>
+                <li>Navegación horizontal además de jerárquica</li>
+            </ul>
+
+            <h5><strong>Progressive Disclosure</strong></h5>
+            <ul>
+                <li>Mostrar solo información relevante según el contexto del usuario</li>
+                <li>Menús que se adaptan basados en comportamiento previo</li>
+                <li>Navegación que evoluciona con el conocimiento del usuario</li>
             </ul>
         </div>
     </div>
 
-    <div class="additional-info">
-        <h3>📚 Información Complementaria para Estudio</h3>
-        
-        <h4>🏛️ Historia del Interaction Design</h4>
-        <p>El campo surgió en los años 80 con el desarrollo de interfaces gráficas de usuario (GUI). Pioneros como Bill Moggridge acuñaron el término, y la disciplina se formalizó con el crecimiento de la web y dispositivos móviles.</p>
-        
-        <h4>🔬 Métodos de Investigación en IxD</h4>
-        <ul>
-            <li><strong>Eye Tracking:</strong> Seguimiento ocular para entender patrones de atención</li>
-            <li><strong>A/B Testing:</strong> Comparación de dos versiones de una interfaz</li>
-            <li><strong>Usability Testing:</strong> Observación directa de usuarios interactuando</li>
-            <li><strong>Heat Maps:</strong> Visualización de áreas de mayor interacción</li>
-            <li><strong>Analytics:</strong> Análisis de datos de comportamiento del usuario</li>
-        </ul>
-        
-        <h4>🚀 Tendencias Actuales en IxD</h4>
-        <ul>
-            <li><strong>Voice UI:</strong> Interfaces por voz (Alexa, Google Assistant)</li>
-            <li><strong>Gesture-Based Interfaces:</strong> Control por gestos</li>
-            <li><strong>AR/VR Interactions:</strong> Realidad aumentada y virtual</li>
-            <li><strong>Micro-interactions:</strong> Pequeñas animaciones que mejoran la experiencia</li>
-            <li><strong>Adaptive Interfaces:</strong> Interfaces que se adaptan al comportamiento del usuario</li>
-        </ul>
-        
-        <h4>🛠️ Herramientas Profesionales</h4>
-        <ul>
-            <li><strong>Prototipado:</strong> Figma, Adobe XD, Sketch, InVision, Principle</li>
-            <li><strong>Testing:</strong> Maze, UserTesting, Lookback, Hotjar</li>
-            <li><strong>Wireframing:</strong> Balsamiq, Axure, MockFlow</li>
-            <li><strong>Colaboración:</strong> Abstract, Zeplin, Avocode</li>
-        </ul>
-        
-        <h4>📊 Métricas Clave en IxD</h4>
-        <ul>
-            <li><strong>Task Success Rate:</strong> Porcentaje de tareas completadas exitosamente</li>
-            <li><strong>Time on Task:</strong> Tiempo promedio para completar una tarea</li>
-            <li><strong>Error Rate:</strong> Frecuencia de errores del usuario</li>
-            <li><strong>System Usability Scale (SUS):</strong> Escala estándar de usabilidad</li>
-            <li><strong>Net Promoter Score (NPS):</strong> Medida de satisfacción del usuario</li>
-        </ul>
-        
-        <h4>💼 Campos de Aplicación</h4>
-        <ul>
-            <li><strong>Web Design:</strong> Sitios web responsivos y aplicaciones web</li>
-            <li><strong>Mobile Apps:</strong> iOS, Android, aplicaciones híbridas</li>
-            <li><strong>IoT Devices:</strong> Internet de las cosas, dispositivos conectados</li>
-            <li><strong>Gaming:</strong> Interfaces de videojuegos y experiencias interactivas</li>
-            <li><strong>Enterprise Software:</strong> Sistemas complejos para empresas</li>
-        </ul>
-    </div>
-    
     <div class="section">
         <h2>🏆 Ejemplos Reales de Interaction Design Exitoso</h2>
         
