@@ -1,0 +1,148 @@
+/* 🔧 Estilos específicos para Principios de Diseño de Software */
+@import url('base.css');
+
+/* Eliminar container duplicado - usar el de base.css */
+
+/* Principio específico - compatible con key-points de base.css */
+.principle {
+  background: linear-gradient(135deg, var(--success-green-light), #c8e6c9);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  margin: var(--spacing-lg) 0;
+  border-left: 4px solid var(--success-green);
+}
+
+.principle h4 {
+  color: var(--success-green-dark);
+  margin-top: 0;
+  font-size: 1.2em;
+}
+
+/* Acrónimo destacado */
+.acronym {
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+/* Ejemplo específico */
+.example {
+  background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  margin: var(--spacing-md) 0;
+  border-left: 4px solid #28a745;
+}
+
+.example h4 {
+  color: #155724;
+  margin-top: 0;
+  font-size: 1.2em;
+}
+  margin-top: 0;
+  font-size: 1.2em;
+}
+
+/* Caja de advertencia - compatible con warning de otros archivos */
+.warning {
+  background: linear-gradient(135deg, var(--warning-red-light), #ffcdd2);
+  padding: var(--spacing-lg);
+  border-left: 4px solid var(--warning-red);
+  border-radius: var(--radius-sm);
+  margin: var(--spacing-lg) 0;
+}
+
+.warning h4 {
+  color: var(--warning-red-dark);
+  margin-top: 0;
+}
+
+/* Estilos específicos para elementos de software design */
+.quiz, .modern-examples, .trends-2025, .advanced-tools, 
+.practical-exercises, .metrics-section, .best-practices, 
+.code-quality-metrics {
+  margin: var(--spacing-xxl) 0;
+}
+
+/* Container de tabla */
+.table-container {
+  overflow-x: auto;
+  margin: var(--spacing-lg) 0;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.table-container th,
+.table-container td {
+  padding: var(--spacing-md);
+  text-align: left;
+  border-bottom: 1px solid var(--border-medium);
+}
+
+.table-container th {
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+  color: white;
+  font-weight: bold;
+}
+
+/* Código pre-formateado con estilo */
+pre {
+  background: #f8f9fa;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-sm);
+  overflow-x: auto;
+  border-left: 4px solid #6c757d;
+  margin: var(--spacing-md) 0;
+}
+
+code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+  line-height: 1.4;
+  color: #333;
+}
+
+/* Estilo específico para bloques de código con fondo de error */
+div[style*="background: #ffebee"] {
+  background: var(--warning-red-light) !important;
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-sm);
+  border-left: 4px solid var(--warning-red);
+  margin: var(--spacing-md) 0;
+}
+
+div[style*="background: #ffebee"] pre {
+  background: white;
+  border-left: none;
+}
+
+/* Lista sin estilo */
+ul[style*="list-style: none"] {
+  list-style: none;
+  padding-left: var(--spacing-md);
+}
+
+/* Responsive específico simplificado */
+@media (max-width: 768px) {
+  .table-container {
+    font-size: 0.9em;
+  }
+  
+  .table-container th,
+  .table-container td {
+    padding: var(--spacing-sm);
+  }
+  
+  pre {
+    font-size: 0.8em;
+  }
+}

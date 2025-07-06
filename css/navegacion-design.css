@@ -1,0 +1,223 @@
+/* 🧭 Estilos específicos para Diseño de Navegación Web */
+@import url('base.css');
+
+/* Container específico */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.content {
+  padding: 40px;
+}
+
+/* Diferencial de conceptos específico para navegación */
+.concept-differential {
+  background: linear-gradient(135deg, var(--background-card) 0%, #e9ecef 100%);
+  padding: var(--spacing-xxl);
+  border-radius: var(--radius-md);
+  margin: var(--spacing-xxl) 0;
+  border: 2px solid var(--border-light);
+}
+
+.concept-differential h3 {
+  text-align: center;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xl);
+  font-size: 1.6rem;
+}
+
+/* Grid diferencial */
+.differential-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xxl);
+}
+
+.concept-detailed {
+  background: white;
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  border-left: 5px solid var(--primary-blue);
+  box-shadow: var(--shadow-md);
+}
+
+.concept-detailed h4 {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+  font-size: 1.3rem;
+}
+
+/* Definición dentro de concepto detallado */
+.definition {
+  background: var(--background-primary);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Sección de ejemplos */
+.examples-section {
+  margin-top: var(--spacing-md);
+}
+
+.examples-section h5 {
+  color: var(--success-green-dark);
+  margin-bottom: var(--spacing-sm);
+}
+
+.example-list {
+  list-style: none;
+  padding: 0;
+}
+
+.example-list li {
+  padding: var(--spacing-xs) 0;
+  border-bottom: 1px solid #f0f0f0;
+  position: relative;
+  padding-left: var(--spacing-lg);
+}
+
+.example-list li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--success-green);
+  font-weight: bold;
+}
+
+.example-list li:last-child {
+  border-bottom: none;
+}
+
+/* Tabla de comparación */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--spacing-lg) 0;
+  background: white;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.concept-comparison th,
+.concept-comparison td {
+  padding: var(--spacing-md);
+  text-align: left;
+  border-bottom: 1px solid var(--border-medium);
+}
+
+.concept-comparison th {
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+  color: white;
+  font-weight: bold;
+}
+
+/* Grid de aplicación */
+.application-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+/* Estados de enlaces */
+.link-states {
+  background: var(--background-card);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  margin: var(--spacing-lg) 0;
+  border-left: 4px solid var(--primary-blue);
+}
+
+.link-states h4 {
+  color: var(--primary-blue-dark);
+  margin-top: 0;
+}
+
+/* Highlight box específico para navegación */
+.highlight-box {
+  background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  margin: var(--spacing-lg) 0;
+  border-left: 4px solid #28a745;
+}
+
+.highlight-box h4 {
+  color: #155724;
+  margin-top: 0;
+  font-size: 1.2em;
+}
+
+/* Demo de tooltip */
+.tooltip-demo {
+  background: var(--background-primary);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  margin: var(--spacing-md) 0;
+}
+
+/* Ejemplo de código */
+.code-example {
+  background: #f8f9fa;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-sm);
+  margin: var(--spacing-md) 0;
+  border-left: 4px solid #6c757d;
+}
+
+.code-example h5 {
+  color: #495057;
+  margin-top: 0;
+  margin-bottom: var(--spacing-sm);
+}
+
+.code-example code {
+  background: white;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-sm);
+  display: block;
+  font-family: 'Courier New', monospace;
+  line-height: 1.4;
+  color: #333;
+  overflow-x: auto;
+}
+
+/* Comparación de diseño */
+.design-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+}
+
+/* Nota importante específica para navegación */
+.important-note {
+  background: linear-gradient(135deg, #fff3cd, var(--accent-orange-light));
+  padding: var(--spacing-lg);
+  border-left: 4px solid var(--accent-orange);
+  margin: var(--spacing-lg) 0;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 2px 8px rgba(243, 156, 18, 0.2);
+}
+
+/* Responsive específico para navegación */
+@media (max-width: 768px) {
+  .content {
+    padding: 20px;
+  }
+  
+  .differential-grid,
+  .design-comparison {
+    grid-template-columns: 1fr;
+  }
+  
+  .application-grid {
+    grid-template-columns: 1fr;
+  }
+}

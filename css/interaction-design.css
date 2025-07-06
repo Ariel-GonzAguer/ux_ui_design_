@@ -1,0 +1,99 @@
+/* 🎨 Estilos específicos para Interaction Design (IxD) */
+@import url('base.css');
+
+/* Dimensiones grid específico para IxD */
+.dimensions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  margin: var(--spacing-xl) 0;
+}
+
+.dimension-card {
+  background: linear-gradient(135deg, var(--background-card), #e9ecef);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  border: 2px solid var(--border-light);
+  transition: var(--transition-normal);
+}
+
+.dimension-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.dimension-card h5 {
+  color: var(--text-secondary);
+  margin-top: 0;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+}
+
+.dimension-card .icon {
+  font-size: 1.5em;
+  margin-right: var(--spacing-xs);
+}
+
+/* Heurísticas grid específico para IxD */
+.heuristics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+  margin: var(--spacing-xl) 0;
+}
+
+.heuristic-card {
+  background: linear-gradient(135deg, var(--background-secondary), var(--background-card));
+  padding: 18px;
+  border-radius: var(--radius-sm);
+  border-left: 4px solid #6c757d;
+  box-shadow: var(--shadow-sm);
+}
+
+.heuristic-card h5 {
+  color: var(--text-secondary);
+  margin: 0 0 var(--spacing-xs) 0;
+  font-size: 1.1em;
+}
+
+/* Tabla de comparación específica para IxD */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--spacing-lg) 0;
+  background: white;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.comparison-table th, 
+.comparison-table td {
+  padding: var(--spacing-md);
+  text-align: left;
+  border-bottom: 1px solid var(--border-medium);
+}
+
+.comparison-table th {
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+  color: white;
+  font-weight: bold;
+}
+
+/* Responsive específico para IxD */
+@media (max-width: 768px) {
+  .dimensions-grid,
+  .heuristics-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .comparison-table {
+    font-size: 0.9em;
+  }
+  
+  .comparison-table th,
+  .comparison-table td {
+    padding: var(--spacing-sm);
+  }
+}

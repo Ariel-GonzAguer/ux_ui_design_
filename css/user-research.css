@@ -1,0 +1,97 @@
+/* 🔍 Estilos específicos para User Research - Generative */
+@import url('base.css');
+
+/* Eliminar estilos duplicados del container y usar los de base.css */
+
+/* Información adicional específica para research - usando estructura de base.css */
+.info-adicional {
+  background: linear-gradient(135deg, var(--purple-light), #e1bee7);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  margin: var(--spacing-xl) 0;
+  border-left: 5px solid var(--purple);
+}
+
+.info-adicional h3 {
+  color: var(--purple-dark);
+  margin-top: 0;
+  font-size: 1.3em;
+}
+
+/* Estilos específicos adicionales para User Research */
+
+/* Tarjetas de ejemplo del mundo real */
+.real-world-examples, .trends-section, .tools-advanced, .exercises-section, 
+.metrics-section, .best-practices, .career-insights, .quick-reference {
+  margin: var(--spacing-xxl) 0;
+}
+
+.example-card, .trend-item, .tool-category, .exercise-card, .practice-item {
+  background: var(--background-secondary);
+  padding: var(--spacing-lg);
+  margin: var(--spacing-md) 0;
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--primary-blue);
+  box-shadow: var(--shadow-sm);
+}
+
+.example-card h5, .trend-item h5, .tool-category h5, 
+.exercise-card h5, .practice-item h5 {
+  color: var(--primary-blue-dark);
+  margin-top: 0;
+  font-size: 1.2em;
+}
+
+/* Grid para elementos */
+.metric-grid, .reference-grid, .glossary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+}
+
+/* Container de tabla */
+.table-container {
+  overflow-x: auto;
+  margin: var(--spacing-lg) 0;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.table-container th,
+.table-container td {
+  padding: var(--spacing-md);
+  text-align: left;
+  border-bottom: 1px solid var(--border-medium);
+}
+
+.table-container th {
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+  color: white;
+  font-weight: bold;
+}
+
+/* Código pre-formateado con estilo */
+pre {
+  background: #f8f9fa;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-sm);
+  overflow-x: auto;
+  border-left: 4px solid #6c757d;
+  margin: var(--spacing-md) 0;
+}
+
+code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+  line-height: 1.4;
+  color: #333;
+}
+
+/* Script no necesita estilos específicos */

@@ -1,0 +1,124 @@
+/* 📚 Estilos específicos para Introducción al Diseño de UI y UX */
+@import url('base.css');
+
+/* Container específico */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.content {
+  padding: 40px;
+}
+
+/* Grid de conceptos específico */
+.concept-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-xl);
+  margin: var(--spacing-xxl) 0;
+}
+
+.concept-card {
+  background: linear-gradient(135deg, var(--background-card), #e9ecef);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  border: 2px solid var(--border-light);
+  transition: var(--transition-normal);
+}
+
+.concept-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.concept-card h4 {
+  color: var(--primary-blue-dark);
+  margin-top: 0;
+  font-size: 1.2em;
+}
+
+/* Caja de destacado */
+.highlight-box {
+  background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  margin: var(--spacing-lg) 0;
+  border-left: 4px solid #28a745;
+}
+
+.highlight-box h4 {
+  color: #155724;
+  margin-top: 0;
+  font-size: 1.2em;
+}
+
+/* Metodología específica */
+.methodology {
+  background: linear-gradient(135deg, #00b894, #00a085);
+  color: white;
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-md);
+  margin: var(--spacing-lg) 0;
+}
+
+.methodology h4 {
+  margin-bottom: var(--spacing-md);
+  font-size: 1.3rem;
+  color: inherit;
+}
+
+/* Pasos de metodología */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.step {
+  background: rgba(255,255,255,0.1);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-sm);
+  backdrop-filter: blur(10px);
+}
+
+.step-number {
+  background: #fff;
+  color: #00b894;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Nota importante */
+.important-note {
+  background: linear-gradient(135deg, #fff3cd, var(--accent-orange-light));
+  padding: var(--spacing-lg);
+  border-left: 4px solid var(--accent-orange);
+  margin: var(--spacing-lg) 0;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 2px 8px rgba(243, 156, 18, 0.2);
+}
+
+/* Responsive específico */
+@media (max-width: 768px) {
+  .content {
+    padding: 20px;
+  }
+  
+  .concept-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}
